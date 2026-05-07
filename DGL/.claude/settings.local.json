@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx --yes capture-website-cli \"file:///d:/FPT/DGG/index.html\" --output=\"screenshot_v1.png\" --width=1440 --height=900)",
+      "Bash(where node:*)",
+      "Bash(npx --version)",
+      "Bash(node -e ':*)",
+      "Bash(npm install:*)"
+    ]
+  }
+}

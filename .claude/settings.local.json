@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(awk '/\\\\.footer-top|#footer|\\\\.footer-desc|\\\\.footer-col|\\\\.footer-bottom|\\\\.footer-copy|\\\\.footer-legal|\\\\.social-link/{found=1} found{print NR\": \"$0} /^[[:space:]]*\\\\}[[:space:]]*$/ && found{count++; if\\(count>=2\\){found=0; count=0}}' c:/Users/Dell/Desktop/DGL/DGL/solutions/banking.html)",
+      "Bash(grep -n \"footer {$\\\\|footer{$\\\\|\\\\.footer-top {$\\\\|\\\\.footer-top{$\" c:/Users/Dell/Desktop/DGL/DGL/solutions/telecom.html c:/Users/Dell/Desktop/DGL/DGL/solutions/payment.html c:/Users/Dell/Desktop/DGL/DGL/solutions/enterprise.html c:/Users/Dell/Desktop/DGL/DGL/solutions/ai.html c:/Users/Dell/Desktop/DGL/DGL/solutions/ecommerce.html)"
+    ]
+  }
+}

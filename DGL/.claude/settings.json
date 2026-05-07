@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ssh -V)",
+      "Bash(python -c \"import paramiko; print\\(paramiko.__version__\\)\")"
+    ]
+  }
+}

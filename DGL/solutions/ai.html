@@ -1,0 +1,1942 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giải pháp AI — DGlobal</title>
+  <meta name="description"
+    content="Chatbot, Callbot và bộ Agentic AI (Database, Report, ITS, KDB Agent) — tự động hóa thông minh, hiệu quả vượt trội." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --bg-primary: #080D1A;
+      --bg-secondary: #0C1426;
+      --accent: #2563EB;
+      --accent-hover: #60A5FA;
+      --highlight: #22D3EE;
+      --text-primary: #F1F5F9;
+      --text-secondary: #94A3B8;
+      --border: #1E2D45;
+      --border-accent: rgba(96, 165, 250, .35);
+      --glow-strong: 0 0 48px rgba(37, 99, 235, .28);
+      --radius-card: 12px;
+      --radius-btn: 8px;
+      --max-width: 1200px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    ul {
+      list-style: none
+    }
+
+    img {
+      max-width: 100%;
+      display: block
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-family: inherit
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity .6s ease, transform .6s ease
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity .6s ease, transform .6s ease
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0)
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity .6s ease, transform .6s ease
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0)
+    }
+
+    .delay-1 {
+      transition-delay: .1s
+    }
+
+    .delay-2 {
+      transition-delay: .2s
+    }
+
+    .delay-3 {
+      transition-delay: .3s
+    }
+
+    .delay-4 {
+      transition-delay: .4s
+    }
+
+    .delay-5 {
+      transition-delay: .5s
+    }
+
+    .delay-6 {
+      transition-delay: .6s
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      .reveal,
+      .reveal-left,
+      .reveal-right {
+        opacity: 1;
+        transform: none;
+        transition-duration: 0s
+      }
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px
+    }
+
+    .section {
+      padding: 80px 0
+    }
+
+    @media(max-width:768px) {
+      .section {
+        padding: 48px 0
+      }
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: var(--highlight);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 16px
+    }
+
+    .section-label::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background: var(--highlight);
+      border-radius: 2px
+    }
+
+    .section-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px
+    }
+
+    .section-subtitle {
+      font-size: 17px;
+      color: var(--text-secondary);
+      max-width: 600px;
+      line-height: 1.7
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--radius-btn);
+      font-size: 15px;
+      font-weight: 600;
+      transition: all .2s ease;
+      white-space: nowrap
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      box-shadow: 0 0 20px rgba(37, 99, 235, .4);
+      transform: translateY(-1px)
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border-accent);
+      color: var(--text-primary);
+      background: transparent
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent-hover);
+      background: rgba(37, 99, 235, .08)
+    }
+
+    .bg-mesh {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 20% 20%, rgba(37, 99, 235, .12) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 80% 80%, rgba(34, 211, 238, .1) 0%, transparent 60%);
+      pointer-events: none
+    }
+
+    .bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255, 255, 255, .04) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none
+    }
+
+    #navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      transition: all .3s ease
+    }
+
+    #navbar.scrolled {
+      background: rgba(8, 13, 26, .95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid #1E3050;
+      box-shadow: 0 4px 32px rgba(0, 0, 0, .4)
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      flex-shrink: 0
+    }
+
+    .nav-logo .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--accent), var(--highlight));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 900;
+      color: #fff
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex: 1;
+      justify-content: center
+    }
+
+    .nav-links a {
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: all .2s;
+      white-space: nowrap
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, .05)
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      width: 32px;
+      height: 32px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text-primary);
+      border-radius: 2px;
+      transition: all .3s
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg)
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg)
+    }
+
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: min(320px, 85vw);
+      background: #0C1830;
+      border-left: 1px solid #1E3050;
+      z-index: 1100;
+      transform: translateX(100%);
+      transition: transform .3s ease;
+      overflow-y: auto;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px
+    }
+
+    .mobile-drawer.open {
+      transform: translateX(0)
+    }
+
+    .mobile-drawer a {
+      display: block;
+      padding: 12px 16px;
+      border-radius: 8px;
+      color: var(--text-secondary);
+      font-size: 15px;
+      font-weight: 500;
+      transition: all .2s
+    }
+
+    .mobile-drawer a:hover {
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, .05)
+    }
+
+    .drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .5);
+      z-index: 1050;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s
+    }
+
+    .drawer-overlay.open {
+      opacity: 1;
+      pointer-events: auto
+    }
+
+    .drawer-cta {
+      margin-top: 16px;
+      padding: 12px 16px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 8px;
+      font-weight: 600;
+      text-align: center
+    }
+
+    .drawer-cta:hover {
+      background: var(--accent-hover) !important;
+      color: #fff !important
+    }
+
+    @media(min-width:1025px) {
+      .hamburger {
+        display: none !important
+      }
+    }
+
+    @media(max-width:1024px) {
+      .hamburger {
+        display: flex
+      }
+
+      .nav-links {
+        display: none
+      }
+
+      .nav-actions .btn {
+        display: none
+      }
+    }
+
+    /* Hero */
+    .sol-hero {
+      padding: 140px 0 80px;
+      background: var(--bg-primary);
+      position: relative;
+      overflow: hidden
+    }
+
+    .sol-hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center
+    }
+
+    @media(max-width:768px) {
+      .sol-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 40px
+      }
+    }
+
+    .sol-hero-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 20px
+    }
+
+    .sol-hero-breadcrumb a {
+      color: var(--text-secondary);
+      transition: color .2s
+    }
+
+    .sol-hero-breadcrumb a:hover {
+      color: var(--accent-hover)
+    }
+
+    .sol-hero-breadcrumb span {
+      color: var(--border-accent)
+    }
+
+    .sol-hero-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      background: rgba(34, 211, 238, .1);
+      border: 1px solid rgba(34, 211, 238, .25);
+      color: var(--highlight)
+    }
+
+    .sol-hero-icon svg {
+      width: 32px;
+      height: 32px
+    }
+
+    .sol-hero-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px
+    }
+
+    .sol-hero-subtitle {
+      font-size: 18px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 520px
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px
+    }
+
+    .sol-hero-visual {
+      background: linear-gradient(145deg, #0F1A2E 0%, #091525 100%);
+      border: 1px solid rgba(34, 211, 238, .2);
+      border-radius: 16px;
+      padding: 32px;
+      position: relative;
+      overflow: hidden
+    }
+
+    .sol-hero-visual::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -20%;
+      width: 80%;
+      height: 80%;
+      background: radial-gradient(circle, rgba(34, 211, 238, .12) 0%, transparent 70%);
+      pointer-events: none
+    }
+
+    .visual-stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px
+    }
+
+    .visual-stat {
+      background: rgba(255, 255, 255, .03);
+      border: 1px solid rgba(255, 255, 255, .06);
+      border-radius: 10px;
+      padding: 20px
+    }
+
+    .visual-stat-num {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--highlight);
+      margin-bottom: 4px
+    }
+
+    .visual-stat-label {
+      font-size: 12px;
+      color: var(--text-secondary)
+    }
+
+    .visual-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 20px 0
+    }
+
+    .visual-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px
+    }
+
+    .visual-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: rgba(34, 211, 238, .08);
+      border: 1px solid rgba(34, 211, 238, .2);
+      color: var(--highlight)
+    }
+
+    /* AI Products Grid */
+    #products {
+      background: var(--bg-secondary);
+      position: relative;
+      overflow: hidden
+    }
+
+    .ai-products-main {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 48px
+    }
+
+    @media(max-width:768px) {
+      .ai-products-main {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .ai-product-card-full {
+      background: linear-gradient(145deg, #0F1A2E 0%, #0A1220 100%);
+      border: 1px solid #1E2D45;
+      border-radius: 14px;
+      padding: 28px;
+      transition: all .3s ease;
+      position: relative;
+      overflow: hidden
+    }
+
+    .ai-product-card-full::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--highlight), transparent);
+      opacity: 0;
+      transition: opacity .3s
+    }
+
+    .ai-product-card-full:hover {
+      border-color: rgba(34, 211, 238, .3);
+      transform: translateY(-4px);
+      box-shadow: 0 0 40px rgba(34, 211, 238, .1)
+    }
+
+    .ai-product-card-full:hover::before {
+      opacity: 1
+    }
+
+    .ai-product-card-full.featured {
+      border-color: rgba(34, 211, 238, .25);
+      background: linear-gradient(145deg, rgba(34, 211, 238, .06) 0%, #0A1220 100%)
+    }
+
+    .ai-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--highlight);
+      background: rgba(34, 211, 238, .08);
+      border: 1px solid rgba(34, 211, 238, .2);
+      border-radius: 4px;
+      padding: 3px 10px;
+      margin-bottom: 14px
+    }
+
+    .ai-product-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px
+    }
+
+    .ai-product-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 16px
+    }
+
+    .ai-product-features {
+      display: flex;
+      flex-direction: column;
+      gap: 8px
+    }
+
+    .ai-feat {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-secondary)
+    }
+
+    .ai-feat::before {
+      content: '✓';
+      color: var(--highlight);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px
+    }
+
+    /* Agentic Section */
+    #agentic {
+      background: var(--bg-primary)
+    }
+
+    .agentic-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 60px
+    }
+
+    @media(max-width:768px) {
+      .agentic-intro {
+        grid-template-columns: 1fr;
+        gap: 32px
+      }
+    }
+
+    .agents-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px
+    }
+
+    @media(max-width:640px) {
+      .agents-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .agent-card {
+      background: linear-gradient(145deg, #0F1A2E, #091525);
+      border: 1px solid #1E3050;
+      border-radius: 12px;
+      padding: 24px;
+      transition: all .3s
+    }
+
+    .agent-card:hover {
+      border-color: rgba(37, 99, 235, .4);
+      transform: translateY(-3px);
+      box-shadow: 0 0 30px rgba(37, 99, 235, .12)
+    }
+
+    .agent-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(37, 99, 235, .12);
+      border: 1px solid rgba(37, 99, 235, .2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px
+    }
+
+    .agent-icon svg {
+      width: 20px;
+      height: 20px;
+      color: var(--accent-hover)
+    }
+
+    .agent-name {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px
+    }
+
+    .agent-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6
+    }
+
+    /* Use cases */
+    #use-cases {
+      background: var(--bg-secondary);
+      position: relative;
+      overflow: hidden
+    }
+
+    .use-cases-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start
+    }
+
+    @media(max-width:768px) {
+      .use-cases-inner {
+        grid-template-columns: 1fr;
+        gap: 40px
+      }
+    }
+
+    .use-case-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px
+    }
+
+    .use-case-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 20px;
+      background: rgba(15, 26, 46, .6);
+      border: 1px solid #1E2D45;
+      border-radius: 10px;
+      transition: all .3s
+    }
+
+    .use-case-item:hover {
+      border-color: var(--border-accent);
+      background: rgba(15, 26, 46, .9)
+    }
+
+    .use-case-num {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(34, 211, 238, .08);
+      border: 1px solid rgba(34, 211, 238, .2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--highlight)
+    }
+
+    .use-case-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 6px
+    }
+
+    .use-case-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6
+    }
+
+    .uc-testimonial {
+      background: linear-gradient(145deg, #0F1A2E, #091525);
+      border: 1px solid rgba(34, 211, 238, .2);
+      border-radius: 14px;
+      padding: 28px;
+      position: relative
+    }
+
+    .uc-testimonial::before {
+      content: '"';
+      position: absolute;
+      top: 16px;
+      left: 24px;
+      font-size: 64px;
+      line-height: 1;
+      color: rgba(34, 211, 238, .15);
+      font-family: serif
+    }
+
+    .uc-quote {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      padding-top: 20px
+    }
+
+    .uc-author {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .uc-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--highlight), #06D6A0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      flex-shrink: 0;
+      color: #fff
+    }
+
+    .uc-author-name {
+      font-size: 14px;
+      font-weight: 600
+    }
+
+    .uc-author-title {
+      font-size: 12px;
+      color: var(--text-secondary)
+    }
+
+    .uc-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 24px
+    }
+
+    .uc-metric {
+      text-align: center;
+      padding: 16px;
+      background: rgba(255, 255, 255, .03);
+      border: 1px solid rgba(255, 255, 255, .06);
+      border-radius: 8px
+    }
+
+    .uc-metric-num {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--highlight)
+    }
+
+    .uc-metric-label {
+      font-size: 11px;
+      color: var(--text-secondary);
+      margin-top: 4px
+    }
+
+    /* CTA */
+    #cta-demo {
+      background: var(--bg-secondary);
+      position: relative;
+      overflow: hidden
+    }
+
+    .cta-demo-inner {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2
+    }
+
+    .cta-demo-inner .section-label {
+      justify-content: center
+    }
+
+    .cta-demo-inner p {
+      color: var(--text-secondary);
+      font-size: 17px;
+      margin-bottom: 36px;
+      line-height: 1.7
+    }
+
+    .cta-demo-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center
+    }
+
+    .btn-demo {
+      padding: 14px 36px;
+      font-size: 16px;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent), #1D4ED8);
+      color: #fff;
+      border-radius: var(--radius-btn);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all .2s ease;
+      cursor: pointer
+    }
+
+    .btn-demo:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 32px rgba(37, 99, 235, .45)
+    }
+
+    .btn-demo svg {
+      width: 18px;
+      height: 18px
+    }
+
+    /* Footer */
+    footer {
+      background: var(--bg-primary);
+      border-top: 1px solid var(--border);
+      padding: 60px 0 32px
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border)
+    }
+
+    @media (max-width: 1024px) {
+      .footer-top {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media (max-width: 640px) {
+      .footer-top {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .footer-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 280px;
+      margin-bottom: 24px
+    }
+
+    .social-links {
+      display: flex;
+      gap: 10px
+    }
+
+    .social-link {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: #0F1A2E;
+      border: 1px solid #1E3050;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      font-size: 13px;
+      transition: all .2s
+    }
+
+    .social-link:hover {
+      border-color: var(--border-accent);
+      color: var(--accent-hover);
+      background: rgba(37, 99, 235, .1)
+    }
+
+    .footer-col h4 {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-primary);
+      margin-bottom: 20px
+    }
+
+    .footer-col ul li {
+      margin-bottom: 12px
+    }
+
+    .footer-col ul a {
+      font-size: 14px;
+      color: var(--text-secondary);
+      transition: color .2s
+    }
+
+    .footer-col ul a:hover {
+      color: var(--text-primary)
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 32px;
+      gap: 16px;
+      flex-wrap: wrap
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: var(--text-secondary)
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 24px
+    }
+
+    .footer-legal a {
+      font-size: 13px;
+      color: var(--text-secondary);
+      transition: color .2s
+    }
+
+    .footer-legal a:hover {
+      color: var(--text-primary)
+    }
+
+    @media (max-width: 640px) {
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center
+      }
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .7);
+      backdrop-filter: blur(6px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: auto
+    }
+
+    .modal-box {
+      background: #0C1830;
+      border: 1px solid #1E3050;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 520px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, .6);
+      transform: translateY(20px) scale(.97);
+      transition: transform .3s ease
+    }
+
+    .modal-overlay.open .modal-box {
+      transform: translateY(0) scale(1)
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 24px 28px 20px;
+      border-bottom: 1px solid #1E3050;
+      gap: 16px
+    }
+
+    .modal-header-text h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 4px
+    }
+
+    .modal-header-text p {
+      font-size: 13px;
+      color: var(--text-secondary)
+    }
+
+    .modal-close {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--text-secondary);
+      transition: all .2s
+    }
+
+    .modal-close:hover {
+      background: rgba(255, 255, 255, .1);
+      color: var(--text-primary)
+    }
+
+    .modal-close svg {
+      width: 16px;
+      height: 16px
+    }
+
+    .modal-body {
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px
+    }
+
+    @media(max-width:480px) {
+      .form-row {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px
+    }
+
+    .form-group label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-secondary)
+    }
+
+    .required {
+      color: #F87171;
+      margin-left: 2px
+    }
+
+    .form-group input,
+    .form-group textarea {
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid #1E3050;
+      border-radius: 8px;
+      padding: 11px 14px;
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      color: var(--text-primary);
+      outline: none;
+      transition: border-color .2s, box-shadow .2s, background .2s;
+      width: 100%
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #4B5A72
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: rgba(96, 165, 250, .5);
+      background: rgba(37, 99, 235, .05);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, .12)
+    }
+
+    .form-group input.error,
+    .form-group textarea.error {
+      border-color: rgba(248, 113, 113, .6);
+      box-shadow: 0 0 0 3px rgba(248, 113, 113, .1)
+    }
+
+    .form-group .field-error {
+      font-size: 12px;
+      color: #F87171;
+      display: none
+    }
+
+    .form-group .field-error.show {
+      display: block
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 110px;
+      line-height: 1.55
+    }
+
+    .modal-footer {
+      padding: 0 28px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 13px 24px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-btn);
+      font-size: 15px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all .2s ease
+    }
+
+    .btn-submit:hover:not(:disabled) {
+      background: var(--accent-hover);
+      box-shadow: 0 0 20px rgba(37, 99, 235, .4);
+      transform: translateY(-1px)
+    }
+
+    .btn-submit:disabled {
+      opacity: .65;
+      cursor: not-allowed
+    }
+
+    .btn-submit .spinner {
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255, 255, 255, .3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+      display: none
+    }
+
+    .btn-submit.loading .spinner {
+      display: block
+    }
+
+    .btn-submit.loading .btn-text {
+      display: none
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
+    .form-note {
+      font-size: 12px;
+      color: #4B5A72;
+      text-align: center;
+      line-height: 1.5
+    }
+
+    .modal-success {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 48px 28px;
+      gap: 16px
+    }
+
+    .modal-success.show {
+      display: flex
+    }
+
+    .modal-form-area.hide {
+      display: none
+    }
+
+    .success-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, rgba(16, 185, 129, .2), rgba(16, 185, 129, .05));
+      border: 1px solid rgba(16, 185, 129, .3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #10B981
+    }
+
+    .success-icon svg {
+      width: 28px;
+      height: 28px
+    }
+
+    .success-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 20px;
+      font-weight: 700
+    }
+
+    .success-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6
+    }
+  </style>
+</head>
+
+<body>
+  <nav id="navbar">
+    <div class="nav-inner"><a href="../index.html" class="nav-logo">
+        <div class="logo-icon">DG</div>DGlobal
+      </a>
+      <div class="nav-links"><a href="../index.html" data-i18n="nav_home">Trang chủ</a><a href="../index.html#solutions"
+          data-i18n="nav_solutions">Giải pháp</a><a href="../index.html#ai-spotlight" class="active"
+          data-i18n="nav_products">Sản phẩm</a><a href="../index.html#clients" data-i18n="nav_clients">Khách hàng</a><a
+          href="../index.html#testimonials" data-i18n="nav_feedback">Phản hồi</a><a href="../index.html#footer"
+          data-i18n="nav_contact_link">Liên hệ</a></div>
+      <div class="nav-actions"><button class="btn btn-primary open-modal-btn" data-i18n="nav_contact">Liên hệ
+          ngay</button></div><button class="hamburger" id="hamburger" aria-label="Menu"
+        aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div
+      style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:800;margin-bottom:24px">
+      <div
+        style="width:32px;height:32px;background:linear-gradient(135deg,#2563EB,#22D3EE);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#fff">
+        DG</div>DGlobal
+    </div><a href="../index.html" data-i18n="nav_home">Trang chủ</a><a href="../index.html#solutions"
+      data-i18n="nav_solutions">Giải pháp</a><a href="../index.html#ai-spotlight" data-i18n="nav_products">Sản
+      phẩm</a><a href="../index.html#clients" data-i18n="nav_clients">Khách hàng</a><a href="../index.html#footer"
+      data-i18n="nav_contact_link">Liên hệ</a><a href="#" class="drawer-cta open-modal-btn" data-i18n="nav_contact">Liên
+      hệ ngay</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="sol-hero">
+    <div class="bg-mesh" style="opacity:.6"></div>
+    <div class="bg-grid" style="opacity:.4"></div>
+    <div class="container" style="position:relative;z-index:2">
+      <div class="sol-hero-inner">
+        <div>
+          <div class="sol-hero-breadcrumb reveal"><a href="../index.html">Trang chủ</a><span>›</span><a
+              href="../index.html#solutions">Giải pháp</a><span>›</span><span style="color:var(--text-primary)">Giải
+              pháp AI</span></div>
+          <div class="sol-hero-icon reveal delay-1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a8 8 0 0 1 8 8v12l-4-4-2.5 2.5L11 18l-2.5 2.5L6 18l-4 4V10a8 8 0 0 1 8-8z" />
+            </svg></div>
+          <h1 class="sol-hero-title reveal delay-2">Bộ giải pháp<br /><span style="color:var(--highlight)">AI
+              Agentic</span><br />cho doanh nghiệp</h1>
+          <p class="sol-hero-subtitle reveal delay-3">Chatbot, Callbot và bộ Agentic AI thế hệ tiếp theo — không chỉ trả
+            lời câu hỏi, mà hành động, phân tích và ra quyết định như một nhân viên thực sự. Tự động hóa 80% công việc
+            lặp đi lặp lại.</p>
+          <div class="hero-cta-group reveal delay-4">
+            <button class="btn btn-primary open-modal-btn" style="font-size:16px;padding:14px 28px">Liên hệ Demo <svg
+                xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg></button>
+            <a href="../index.html#solutions" class="btn btn-outline" style="font-size:16px;padding:14px 28px">← Giải
+              pháp khác</a>
+          </div>
+        </div>
+        <div class="sol-hero-visual reveal-right delay-2">
+          <div class="visual-stat-grid">
+            <div class="visual-stat">
+              <div class="visual-stat-num">10K+</div>
+              <div class="visual-stat-label">Yêu cầu/ngày tự động</div>
+            </div>
+            <div class="visual-stat">
+              <div class="visual-stat-num">91%</div>
+              <div class="visual-stat-label">Tỷ lệ hài lòng KH</div>
+            </div>
+            <div class="visual-stat">
+              <div class="visual-stat-num">80%</div>
+              <div class="visual-stat-label">Giảm tải nhân sự</div>
+            </div>
+            <div class="visual-stat">
+              <div class="visual-stat-num">3 tháng</div>
+              <div class="visual-stat-label">ROI dương</div>
+            </div>
+          </div>
+          <div class="visual-divider"></div>
+          <div class="visual-tags"><span class="visual-tag">Chatbot</span><span class="visual-tag">Callbot</span><span
+              class="visual-tag">Database Agent</span><span class="visual-tag">Report Agent</span><span
+              class="visual-tag">ITS Agent</span><span class="visual-tag">KDB Agent</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI PRODUCTS -->
+  <section id="products" class="section">
+    <div class="container">
+      <div class="section-label reveal">Sản phẩm AI</div>
+      <h2 class="section-title reveal delay-1">6 sản phẩm AI<br /><span style="color:var(--highlight)">cho mọi nhu cầu
+          doanh nghiệp</span></h2>
+      <p class="section-subtitle reveal delay-2">Từ giao tiếp khách hàng đến phân tích dữ liệu nội bộ — bộ sản phẩm AI
+        hoàn chỉnh, tích hợp liền mạch với hệ thống hiện có.</p>
+      <div class="ai-products-main">
+        <!-- Chatbot -->
+        <div id="Chatbot" class="ai-product-card-full featured reveal delay-1">
+          <div class="ai-tag">⚡ Phổ biến nhất</div>
+          <div class="ai-product-name">Chatbot AI</div>
+          <div class="ai-product-desc">AI hội thoại đa kênh cho CSKH, sales và HR — phục vụ 24/7 trên Web, Zalo,
+            Facebook Messenger, Telegram và ứng dụng di động. Hiểu tiếng Việt tự nhiên, tự học từ dữ liệu doanh nghiệp.
+          </div>
+          <div class="ai-product-features">
+            <div class="ai-feat">Hiểu ngôn ngữ tự nhiên tiếng Việt (NLU)</div>
+            <div class="ai-feat">Tích hợp đa kênh: Web, Zalo, Facebook, Telegram</div>
+            <div class="ai-feat">Handoff tự động sang agent người khi cần</div>
+            <div class="ai-feat">Dashboard analytics và A/B testing</div>
+            <div class="ai-feat">Fine-tune theo knowledge base doanh nghiệp</div>
+          </div>
+        </div>
+        <!-- Callbot -->
+        <div id="Callbot" class="ai-product-card-full featured reveal delay-2">
+          <div class="ai-tag">🎙️ AI Giọng nói</div>
+          <div class="ai-product-name">Callbot AI</div>
+          <div class="ai-product-desc">Tổng đài AI giọng nói cho inbound/outbound calls — thay thế IVR truyền thống, xử
+            lý cuộc gọi tự động với NLP tiên tiến. Giọng đọc tự nhiên, hiểu giọng Bắc-Nam.</div>
+          <div class="ai-product-features">
+            <div class="ai-feat">Speech-to-text và Text-to-speech tiếng Việt</div>
+            <div class="ai-feat">Outbound campaigns tự động (telesales, nhắc nợ)</div>
+            <div class="ai-feat">Tích hợp với tổng đài VoIP và CRM hiện có</div>
+            <div class="ai-feat">Phân tích cảm xúc và chuyển cuộc gọi thông minh</div>
+            <div class="ai-feat">Ghi âm, transcript và báo cáo tự động</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENTIC AI -->
+  <section id="agentic" class="section">
+    <div class="bg-grid" style="opacity:.3"></div>
+    <div class="container" style="position:relative;z-index:2">
+      <div class="agentic-intro">
+        <div>
+          <div class="section-label reveal">Agentic AI Suite</div>
+          <h2 class="section-title reveal delay-1">AI Agent — Nhân viên số<br /><span
+              style="color:var(--highlight)">thực sự hành động</span></h2>
+          <p class="section-subtitle reveal delay-2">Không chỉ trả lời câu hỏi — Agent AI của DGlobal có khả năng truy
+            vấn database, tạo báo cáo, giải quyết ticket IT và quản lý tri thức doanh nghiệp một cách tự động.</p>
+          <div style="margin-top:24px" class="reveal delay-3">
+            <button class="btn btn-primary open-modal-btn" style="font-size:15px">Khám phá Agentic AI →</button>
+          </div>
+        </div>
+        <div class="reveal-right delay-2"
+          style="background:linear-gradient(145deg,rgba(34,211,238,.06),rgba(37,99,235,.04));border:1px solid rgba(34,211,238,.15);border-radius:14px;padding:28px">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--highlight);margin-bottom:16px">
+            // Agent đang hoạt động</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div
+              style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:12px;font-size:13px;color:var(--text-secondary)">
+              📊 <span style="color:var(--text-primary);font-weight:600">Report Agent</span> — Đang tạo báo cáo doanh
+              thu Q1...</div>
+            <div
+              style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:12px;font-size:13px;color:var(--text-secondary)">
+              🗄️ <span style="color:var(--text-primary);font-weight:600">Database Agent</span> — "Tổng đơn hàng tuần
+              này?" → <span style="color:var(--highlight)">1,247 đơn</span></div>
+            <div
+              style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:12px;font-size:13px;color:var(--text-secondary)">
+              🎫 <span style="color:var(--text-primary);font-weight:600">ITS Agent</span> — Đã resolve 23 tickets hôm
+              nay</div>
+            <div
+              style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:12px;font-size:13px;color:var(--text-secondary)">
+              📚 <span style="color:var(--text-primary);font-weight:600">KDB Agent</span> — Đã cập nhật 12 tài liệu quy
+              trình</div>
+          </div>
+        </div>
+      </div>
+      <div class="agents-grid">
+        <div class="agent-card reveal delay-1">
+          <div class="agent-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="12" cy="5" rx="9" ry="3" />
+              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+            </svg></div>
+          <div class="agent-name">Database Agent</div>
+          <div class="agent-desc">Truy vấn cơ sở dữ liệu doanh nghiệp bằng ngôn ngữ tự nhiên — không cần viết SQL. Hỏi
+            "Doanh thu tháng này?" và Agent sẽ tự query và trả kết quả tức thì. Hỗ trợ MySQL, PostgreSQL, SQL Server,
+            Oracle.</div>
+        </div>
+        <div class="agent-card reveal delay-2">
+          <div class="agent-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10" />
+              <line x1="12" y1="20" x2="12" y2="4" />
+              <line x1="6" y1="20" x2="6" y2="14" />
+            </svg></div>
+          <div class="agent-name">Report Agent</div>
+          <div class="agent-desc">Tự động tạo báo cáo kinh doanh và dashboard từ dữ liệu thô — weekly report, monthly
+            P&L, KPI summary. Xuất PDF, Excel và trình bày bằng biểu đồ trực quan. Gửi email tự động theo lịch.</div>
+        </div>
+        <div class="agent-card reveal delay-3">
+          <div class="agent-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <path d="M8 21h8" />
+              <path d="M12 17v4" />
+            </svg></div>
+          <div class="agent-name">ITS Agent</div>
+          <div class="agent-desc">Intelligent IT Support Agent — phân loại ticket tự động, gợi ý giải pháp từ knowledge
+            base, tự giải quyết các vấn đề đơn giản và escalate thông minh. Giảm 70% workload của đội IT.</div>
+        </div>
+        <div class="agent-card reveal delay-4">
+          <div class="agent-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+            </svg></div>
+          <div class="agent-name">KDB Agent</div>
+          <div class="agent-desc">Knowledge Database Agent — quản lý và khai thác tri thức doanh nghiệp bằng AI. Tìm
+            kiếm ngữ nghĩa trong tài liệu nội bộ, cập nhật knowledge base tự động và onboarding nhân viên mới.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section id="use-cases" class="section">
+    <div class="container">
+      <div class="use-cases-inner">
+        <div>
+          <div class="section-label reveal">Ứng dụng thực tiễn</div>
+          <h2 class="section-title reveal delay-1">AI giải quyết vấn đề<br />gì cho doanh nghiệp?</h2>
+          <p class="section-subtitle reveal delay-2" style="margin-bottom:32px">Từ CSKH đến nội bộ — AI Agent phù hợp
+            với mọi quy mô doanh nghiệp.</p>
+          <div class="use-case-list">
+            <div class="use-case-item reveal delay-2">
+              <div class="use-case-num">01</div>
+              <div>
+                <div class="use-case-title">Ngân hàng & Tài chính</div>
+                <div class="use-case-desc">Chatbot CSKH 24/7, tư vấn sản phẩm tài chính, xử lý yêu cầu giao dịch và
+                  Callbot thu hồi nợ thông minh.</div>
+              </div>
+            </div>
+            <div class="use-case-item reveal delay-3">
+              <div class="use-case-num">02</div>
+              <div>
+                <div class="use-case-title">Bán lẻ & Thương mại điện tử</div>
+                <div class="use-case-desc">Tư vấn sản phẩm AI, theo dõi đơn hàng tự động, xử lý đổi trả và
+                  upsell/cross-sell thông minh.</div>
+              </div>
+            </div>
+            <div class="use-case-item reveal delay-4">
+              <div class="use-case-num">03</div>
+              <div>
+                <div class="use-case-title">Doanh nghiệp & HR</div>
+                <div class="use-case-desc">Chatbot HR cho onboarding, hỏi đáp nội bộ, KDB Agent quản lý quy trình và ITS
+                  Agent hỗ trợ kỹ thuật.</div>
+              </div>
+            </div>
+            <div class="use-case-item reveal delay-5">
+              <div class="use-case-num">04</div>
+              <div>
+                <div class="use-case-title">Y tế & Dược phẩm</div>
+                <div class="use-case-desc">Chatbot đặt lịch khám, Callbot nhắc uống thuốc, tư vấn sức khỏe sơ bộ và tổng
+                  hợp thông tin bệnh nhân.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="uc-testimonial reveal-right delay-2">
+            <div class="uc-quote">"Chatbot AI của DGlobal xử lý hơn 10,000 yêu cầu/ngày tự động hoàn toàn. Tỷ lệ hài
+              lòng của khách hàng tăng từ 72% lên 91% chỉ sau 3 tháng triển khai. Đội CSKH của chúng tôi giờ tập trung
+              vào các case phức tạp hơn."</div>
+            <div class="uc-author">
+              <div class="uc-avatar">PL</div>
+              <div>
+                <div class="uc-author-name">Phạm Thị Lan</div>
+                <div class="uc-author-title">Head of Digital, Techcombank</div>
+              </div>
+            </div>
+          </div>
+          <div class="uc-metrics reveal-right delay-3" style="margin-top:20px">
+            <div class="uc-metric">
+              <div class="uc-metric-num">10K+</div>
+              <div class="uc-metric-label">Yêu cầu/ngày</div>
+            </div>
+            <div class="uc-metric">
+              <div class="uc-metric-num">91%</div>
+              <div class="uc-metric-label">Tỷ lệ hài lòng</div>
+            </div>
+            <div class="uc-metric">
+              <div class="uc-metric-num">3 tháng</div>
+              <div class="uc-metric-label">Đạt kết quả</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta-demo" class="section">
+    <div class="bg-mesh" style="opacity:.5"></div>
+    <div class="container">
+      <div class="cta-demo-inner">
+        <div class="section-label reveal">Bắt đầu với AI</div>
+        <h2 class="section-title reveal delay-1">Sẵn sàng tự động hóa<br /><span style="color:var(--highlight)">doanh
+            nghiệp của bạn?</span></h2>
+        <p class="reveal delay-2">Đặt lịch demo AI miễn phí — chuyên gia DGlobal sẽ phân tích quy trình và đề xuất AI
+          Agent phù hợp nhất, với proof-of-concept trong 2 tuần.</p>
+        <div class="cta-demo-buttons reveal delay-3">
+          <button class="btn-demo open-modal-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z" />
+            </svg>Demo AI miễn phí</button>
+          <a href="tel:+840981100001" class="btn btn-outline" style="font-size:16px;padding:14px 28px">Gọi: 0981 100
+            01</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo" style="margin-bottom:16px;display:inline-flex">
+            <div class="logo-icon">DG</div>DGlobal
+          </a>
+          <p class="footer-desc" data-i18n="footer_desc">DGlobal Technology Joint Stock Company — Giải pháp công nghệ toàn diện cho doanh nghiệp số Việt Nam.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+            <a href="#" class="social-link" aria-label="Facebook">f</a>
+            <a href="#" class="social-link" aria-label="YouTube">▶</a>
+            <a href="#" class="social-link" aria-label="Zalo">Z</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_sol">Giải pháp</h4>
+          <ul>
+            <li><a href="enterprise.html" data-i18n="sol1_title">Giải pháp Doanh nghiệp</a></li>
+            <li><a href="telecom.html" data-i18n="sol2_title">Dịch vụ Viễn thông</a></li>
+            <li><a href="banking.html" data-i18n="sol3_title">Ngân hàng Số</a></li>
+            <li><a href="payment.html" data-i18n="sol4_title">Cổng Thanh toán</a></li>
+            <li><a href="ecommerce.html" data-i18n="sol5_title">Thương mại Điện tử</a></li>
+            <li><a href="ai.html" data-i18n="sol6_title">Giải pháp AI</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_ai">Sản phẩm AI</h4>
+          <ul>
+            <li><a href="ai.html#Chatbot">Chatbot</a></li>
+            <li><a href="ai.html#Callbot">Callbot</a></li>
+            <li><a href="ai.html#agentic">Database Agent</a></li>
+            <li><a href="ai.html#agentic">Report Agent</a></li>
+            <li><a href="ai.html#agentic">ITS Agent</a></li>
+            <li><a href="ai.html#agentic">KDB Agent</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_company">Công ty</h4>
+          <ul>
+            <li><a href="../index.html#hero" data-i18n="footer_about">Về DGlobal</a></li>
+            <li><a href="../index.html#clients" data-i18n="footer_customers">Khách hàng</a></li>
+            <li><a href="../tuyen-dung.html" data-i18n="footer_careers">Tuyển dụng</a></li>
+            <li><a href="#" class="open-modal-btn" data-i18n="footer_contact">Liên hệ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy" data-i18n="footer_copy">© 2025 DGlobal Technology JSC. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#" data-i18n="footer_privacy">Chính sách Bảo mật</a>
+          <a href="#" data-i18n="footer_terms">Điều khoản Dịch vụ</a>
+          <a href="#">Cookie</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-header-text">
+          <h2 id="modalTitle">Demo AI miễn phí</h2>
+          <p>Điền thông tin, chuyên gia AI DGlobal sẽ liên hệ trong 24 giờ.</p>
+        </div><button class="modal-close" id="modalClose" aria-label="Đóng"><svg xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg></button>
+      </div>
+      <div class="modal-form-area">
+        <form class="modal-body" id="contactForm" action="https://formsubmit.co/hann86@gmail.com" method="POST"><input
+            type="hidden" name="_subject" value="[DGlobal] Đăng ký Demo AI" /><input type="hidden" name="_captcha"
+            value="false" /><input type="hidden" name="_template" value="table" />
+          <div class="form-row">
+            <div class="form-group"><label for="contactName">Họ và tên <span class="required">*</span></label><input
+                type="text" id="contactName" name="ho_va_ten" placeholder="Nguyễn Văn A" autocomplete="name" /><span
+                class="field-error" id="errName">Vui lòng nhập họ và tên</span></div>
+            <div class="form-group"><label for="contactPhone">Số điện thoại <span
+                  class="required">*</span></label><input type="tel" id="contactPhone" name="so_dien_thoai"
+                placeholder="0912 345 678" autocomplete="tel" /><span class="field-error" id="errPhone">Vui lòng nhập số
+                điện thoại hợp lệ</span></div>
+          </div>
+          <div class="form-group"><label for="contactEmail">Email <span class="required">*</span></label><input
+              type="email" id="contactEmail" name="email" placeholder="email@company.com" autocomplete="email" /><span
+              class="field-error" id="errEmail">Vui lòng nhập địa chỉ email hợp lệ</span></div>
+          <div class="form-group"><label for="contactMessage">Sản phẩm quan tâm & Mô tả nhu cầu <span
+                class="required">*</span></label><textarea id="contactMessage" name="noi_dung"
+              placeholder="Ví dụ: Chatbot CSKH cho website / Callbot outbound / Database Agent cho hệ thống ERP..."></textarea><span
+              class="field-error" id="errMessage">Vui lòng nhập nội dung liên hệ</span></div>
+        </form>
+        <div class="modal-footer"><button class="btn-submit" id="submitBtn" type="button">
+            <div class="spinner"></div><span class="btn-text">Đăng ký Demo</span>
+          </button>
+          <p class="form-note">Thông tin của bạn được bảo mật tuyệt đối và chỉ dùng để liên hệ.</p>
+        </div>
+      </div>
+      <div class="modal-success" id="modalSuccess">
+        <div class="success-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12" />
+          </svg></div>
+        <div class="success-title">Đăng ký thành công!</div>
+        <p class="success-desc">Cảm ơn bạn đã quan tâm đến AI DGlobal. Chuyên gia của chúng tôi sẽ liên hệ trong vòng
+          <strong style="color:var(--highlight)">24 giờ</strong> làm việc.
+        </p><button class="btn btn-primary" onclick="closeModal()" style="margin-top:8px">Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const navbar = document.getElementById('navbar'); window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 20), { passive: true });
+    const hamburger = document.getElementById('hamburger'), drawer = document.getElementById('mobileDrawer'), drawerOverlay = document.getElementById('drawerOverlay');
+    function openDrawer() { drawer.classList.add('open'); drawerOverlay.classList.add('open'); hamburger.classList.add('open'); document.body.style.overflow = 'hidden'; } function closeDrawer() { drawer.classList.remove('open'); drawerOverlay.classList.remove('open'); hamburger.classList.remove('open'); document.body.style.overflow = ''; }
+    hamburger.addEventListener('click', () => drawer.classList.contains('open') ? closeDrawer() : openDrawer()); drawerOverlay.addEventListener('click', closeDrawer); drawer.querySelectorAll('a:not(.open-modal-btn)').forEach(a => a.addEventListener('click', closeDrawer));
+    const io = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }); }, { threshold: .1, rootMargin: '0px 0px -60px 0px' }); document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => io.observe(el));
+    const modal = document.getElementById('contactModal'), modalClose = document.getElementById('modalClose'), submitBtn = document.getElementById('submitBtn'), contactForm = document.getElementById('contactForm'), modalSuccess = document.getElementById('modalSuccess'), modalFormArea = document.querySelector('.modal-form-area');
+    function openModal() { modal.classList.add('open'); document.body.style.overflow = 'hidden'; contactForm.reset(); modalSuccess.classList.remove('show'); modalFormArea.classList.remove('hide'); submitBtn.classList.remove('loading'); submitBtn.disabled = false; document.querySelectorAll('.field-error').forEach(e => e.classList.remove('show')); document.querySelectorAll('.form-group input,.form-group textarea').forEach(el => el.classList.remove('error')); setTimeout(() => document.getElementById('contactName').focus(), 350); }
+    function closeModal() { modal.classList.remove('open'); document.body.style.overflow = ''; }
+    document.querySelectorAll('.open-modal-btn').forEach(btn => btn.addEventListener('click', e => { e.preventDefault(); openModal(); }));
+    modalClose.addEventListener('click', closeModal); modal.addEventListener('click', e => { if (e.target === modal) closeModal(); }); document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
+    function validate() { let ok = true; const name = document.getElementById('contactName'), phone = document.getElementById('contactPhone'), email = document.getElementById('contactEmail'), msg = document.getElementById('contactMessage'); const setErr = (el, errId, cond) => { const errEl = document.getElementById(errId); if (cond) { el.classList.add('error'); errEl.classList.add('show'); ok = false; } else { el.classList.remove('error'); errEl.classList.remove('show'); } }; setErr(name, 'errName', name.value.trim().length < 2); setErr(phone, 'errPhone', !/^[0-9+\s\-()]{8,15}$/.test(phone.value.trim())); setErr(email, 'errEmail', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())); setErr(msg, 'errMessage', msg.value.trim().length < 5); return ok; }
+    submitBtn.addEventListener('click', async () => { if (!validate()) return; submitBtn.classList.add('loading'); submitBtn.disabled = true; const data = new FormData(contactForm); try { const res = await fetch('https://formsubmit.co/ajax/hann86@gmail.com', { method: 'POST', headers: { 'Accept': 'application/json' }, body: data }); if (res.ok) { modalFormArea.classList.add('hide'); modalSuccess.classList.add('show'); } else { throw new Error('fail'); } } catch { contactForm.submit(); } });
+  </script>
+  <script src="../js/i18n.js"></script>
+
+  <!-- HOTLINE FLOATING BUTTON -->
+  <style>
+    .hotline-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: bottom 0.35s ease;
+    }
+    .hotline-float.near-footer { bottom: 60px; }
+
+    .hotline-label {
+      background: #0D1530;
+      border: 1px solid rgba(37, 99, 235, .35);
+      color: #F9FAFB;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 24px;
+      white-space: nowrap;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .4);
+      opacity: 0;
+      transform: translateX(8px);
+      transition: opacity .25s, transform .25s;
+      pointer-events: none
+    }
+
+    .hotline-float:hover .hotline-label {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all
+    }
+
+    .hotline-btn {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #2563EB, #06B6D4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37, 99, 235, .45);
+      flex-shrink: 0;
+      position: relative
+    }
+
+    .hotline-btn svg {
+      width: 24px;
+      height: 24px;
+      fill: #fff
+    }
+
+    .hotline-btn::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 2px solid rgba(37, 99, 235, .5);
+      animation: hotline-pulse 2s ease-out infinite
+    }
+
+    @keyframes hotline-pulse {
+      0% {
+        transform: scale(1);
+        opacity: .8
+      }
+
+      70% {
+        transform: scale(1.3);
+        opacity: 0
+      }
+
+      100% {
+        transform: scale(1.3);
+        opacity: 0
+      }
+    }
+
+    @media(max-width:640px) {
+      .hotline-float { bottom: 20px; right: 16px; }
+      .hotline-float.near-footer { bottom: 100px; }
+      .hotline-btn {
+        width: 50px;
+        height: 50px
+      }
+    }
+  </style>
+  <a href="tel:+840981100001" class="hotline-float" aria-label="Gọi hotline DGlobal">
+    <span class="hotline-label" data-i18n="hotline_label">📞 0981 100 001</span>
+    <div class="hotline-btn">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+      </svg>
+    </div>
+  </a>
+  <script src="../js/hotline.js"></script>
+</body>
+
+</html>

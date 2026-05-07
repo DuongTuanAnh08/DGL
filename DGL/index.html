@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DGlobal — Giải pháp Công nghệ Toàn diện</title>
+  <meta name="description"
+    content="DGlobal cung cấp giải pháp doanh nghiệp, viễn thông, ngân hàng số, cổng thanh toán, thương mại điện tử và AI cho doanh nghiệp Việt Nam." />
+  <meta name="keywords"
+    content="giải pháp doanh nghiệp, ngân hàng số, chatbot AI, callbot, agentic AI, cổng thanh toán, DGlobal" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="DGlobal — Giải pháp Công nghệ Toàn diện" />
+  <meta property="og:description" content="Comprehensive technology solutions for the digital enterprise." />
+  <meta property="og:type" content="website" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+
+  <!-- ==============================
+     NAVBAR
+============================== -->
+  <header id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="DGlobal Homepage">
+        <div class="logo-icon">DG</div>
+        DGlobal
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#solutions" data-i18n="nav_solutions">Giải pháp</a>
+        <a href="#ai-spotlight" data-i18n="nav_products">Sản phẩm</a>
+        <a href="#why" data-i18n="nav_about">Về chúng tôi</a>
+        <a href="#clients" data-i18n="nav_clients">Khách hàng</a>
+        <a href="tuyen-dung.html" data-i18n="nav_careers">Tuyển dụng</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#cta-banner" class="btn btn-primary" data-i18n="nav_contact">Liên hệ ngay</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <nav class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation">
+    <a href="#solutions" data-i18n="nav_solutions">Giải pháp</a>
+    <a href="#ai-spotlight" data-i18n="nav_products">Sản phẩm</a>
+    <a href="#why" data-i18n="nav_about">Về chúng tôi</a>
+    <a href="#clients" data-i18n="nav_clients">Khách hàng</a>
+    <a href="tuyen-dung.html" data-i18n="nav_careers">Tuyển dụng</a>
+    <a href="#cta-banner" class="btn btn-primary drawer-cta" style="margin-top:24px;justify-content:center;"
+      data-i18n="nav_contact">Liên hệ ngay</a>
+  </nav>
+
+  <!-- ==============================
+     HERO
+============================== -->
+  <section id="hero">
+    <div class="hero-bg">
+      <div class="bg-grid"></div>
+      <div class="bg-mesh"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <!-- Left: copy -->
+        <div class="hero-text">
+          <div class="hero-badge reveal">
+            <span class="dot"></span>
+            <span data-i18n="hero_badge">Đối tác chuyển đổi số hàng đầu</span>
+          </div>
+          <h1 class="hero-title reveal delay-1" data-i18n="hero_title">
+            Giải pháp công nghệ<br />
+            <span class="gradient-text">toàn diện cho</span><br />
+            doanh nghiệp số
+          </h1>
+          <p class="hero-sub reveal delay-2" data-i18n="hero_sub">
+            DGlobal cung cấp hệ sinh thái công nghệ tích hợp — từ ERP, viễn thông, ngân hàng số đến các giải pháp AI
+            tiên tiến giúp doanh nghiệp bứt phá.
+          </p>
+          <div class="hero-cta reveal delay-3">
+            <a href="#solutions" class="btn btn-primary">
+              <span data-i18n="hero_cta1">Khám phá giải pháp</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </a>
+            <a href="#why" class="btn btn-outline" data-i18n="hero_cta2">Tìm hiểu thêm</a>
+          </div>
+        </div>
+
+        <!-- Right: visual -->
+        <div class="hero-visual reveal-right delay-2">
+          <div class="tech-graphic">
+            <!-- SVG orbit rings -->
+            <svg class="hero-svg" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="glow-blue">
+                  <feGaussianBlur stdDeviation="3" result="b" />
+                  <feMerge>
+                    <feMergeNode in="b" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+                <filter id="glow-cyan">
+                  <feGaussianBlur stdDeviation="3" result="b" />
+                  <feMerge>
+                    <feMergeNode in="b" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+              <!-- Outer ring -->
+              <g class="orbit-path-1">
+                <circle cx="250" cy="250" r="220" stroke="rgba(37,99,235,0.18)" stroke-width="1"
+                  stroke-dasharray="6 8" />
+                <circle cx="250" cy="30" r="6" fill="#2563EB" filter="url(#glow-blue)" />
+              </g>
+              <!-- Mid ring -->
+              <g class="orbit-path-2">
+                <circle cx="250" cy="250" r="165" stroke="rgba(34,211,238,0.18)" stroke-width="1"
+                  stroke-dasharray="4 10" />
+                <circle cx="250" cy="85" r="5" fill="#22D3EE" filter="url(#glow-cyan)" />
+                <circle cx="415" cy="250" r="4" fill="#22D3EE" opacity="0.7" />
+              </g>
+              <!-- Inner ring -->
+              <g class="orbit-path-3">
+                <circle cx="250" cy="250" r="110" stroke="rgba(96,165,250,0.14)" stroke-width="1" />
+                <circle cx="250" cy="140" r="4" fill="#60A5FA" filter="url(#glow-blue)" />
+              </g>
+              <!-- Radial glow backdrop -->
+              <circle cx="250" cy="250" r="90" fill="rgba(37,99,235,0.07)" />
+              <circle cx="250" cy="250" r="130" fill="rgba(37,99,235,0.04)" />
+              <!-- Connection lines to float cards -->
+              <line x1="250" y1="175" x2="250" y2="60" stroke="rgba(96,165,250,0.12)" stroke-width="1"
+                stroke-dasharray="3 5" />
+              <line x1="305" y1="220" x2="420" y2="210" stroke="rgba(96,165,250,0.12)" stroke-width="1"
+                stroke-dasharray="3 5" />
+              <line x1="195" y1="295" x2="100" y2="370" stroke="rgba(96,165,250,0.12)" stroke-width="1"
+                stroke-dasharray="3 5" />
+              <line x1="305" y1="295" x2="400" y2="360" stroke="rgba(96,165,250,0.12)" stroke-width="1"
+                stroke-dasharray="3 5" />
+            </svg>
+
+            <!-- Core node -->
+            <div class="core-node">DG<span>GLOBAL</span></div>
+
+            <!-- Floating info cards -->
+            <div class="float-card float-card-1">
+              <span class="fc-dot" style="background:#10B981;color:#10B981"></span>Enterprise ERP
+            </div>
+            <div class="float-card float-card-2">
+              <span class="fc-dot" style="background:#22D3EE;color:#22D3EE"></span>AI Chatbot
+            </div>
+            <div class="float-card float-card-3">
+              <span class="fc-dot" style="background:#60A5FA;color:#60A5FA"></span>Digital Banking
+            </div>
+            <div class="float-card float-card-4">
+              <span class="fc-dot" style="background:#F97316;color:#F97316"></span>Payment QR
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+     STATS BAR
+============================== -->
+  <section id="stats">
+    <div class="container">
+      <div class="stats-inner">
+        <div class="stat-item reveal">
+          <div class="stat-number" data-target="5" data-suffix="+">05+</div>
+          <div class="stat-label" data-i18n="stat_years">Năm kinh nghiệm</div>
+        </div>
+        <div class="stat-item reveal delay-1">
+          <div class="stat-number" data-target="20" data-suffix="+">20+</div>
+          <div class="stat-label" data-i18n="stat_clients">Doanh nghiệp tin dùng</div>
+        </div>
+        <div class="stat-item reveal delay-2">
+          <div class="stat-number" data-target="10" data-suffix="+">10+</div>
+          <div class="stat-label" data-i18n="stat_products">Sản phẩm &amp; Dịch vụ</div>
+        </div>
+        <div class="stat-item reveal delay-3">
+          <div class="stat-number">99.9%</div>
+          <div class="stat-label" data-i18n="stat_uptime">Uptime SLA cam kết</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+     SOLUTIONS GRID
+============================== -->
+  <section id="solutions" class="section">
+    <div class="container">
+      <div class="solutions-header">
+        <div>
+          <div class="section-label reveal" data-i18n="sol_label">Dịch vụ &amp; Giải pháp</div>
+          <h2 class="section-title reveal delay-1" data-i18n="sol_title">Hệ sinh thái giải pháp<br />toàn diện</h2>
+          <p class="section-subtitle reveal delay-2" data-i18n="sol_subtitle">Mọi nhu cầu công nghệ của doanh nghiệp
+            trong một nền tảng tích hợp, từ vận hành đến chuyển đổi số.</p>
+        </div>
+      </div>
+
+      <div class="solutions-grid">
+        <!-- Enterprise -->
+        <a href="solutions/enterprise.html" class="solution-card reveal delay-1">
+          <div class="sol-icon sol-icon-blue">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <path d="M8 21h8" />
+              <path d="M12 17v4" />
+            </svg>
+          </div>
+          <h3 class="sol-title" data-i18n="sol1_title">Giải pháp Doanh nghiệp</h3>
+          <p class="sol-desc" data-i18n="sol1_desc">ERP, CRM, workflow automation và tư vấn chuyển đổi số toàn diện cho
+            doanh nghiệp lớn và vừa.</p>
+          <span class="sol-link"><span data-i18n="sol_learnmore">Tìm hiểu thêm</span> <svg
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg></span>
+        </a>
+
+        <!-- Telecom -->
+        <a href="solutions/telecom.html" class="solution-card reveal delay-2">
+          <div class="sol-icon sol-icon-cyan">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z" />
+            </svg>
+          </div>
+          <h3 class="sol-title" data-i18n="sol2_title">Dịch vụ Viễn thông</h3>
+          <p class="sol-desc" data-i18n="sol2_desc">VoIP, MVNO, hạ tầng viễn thông, SMS/OTP gateway — kết nối tin cậy
+            cho mọi quy mô doanh nghiệp.</p>
+          <span class="sol-link"><span data-i18n="sol_learnmore">Tìm hiểu thêm</span> <svg
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg></span>
+        </a>
+
+        <!-- Banking -->
+        <a href="solutions/banking.html" class="solution-card reveal delay-3">
+          <div class="sol-icon sol-icon-green">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+          </div>
+          <h3 class="sol-title" data-i18n="sol3_title">Ngân hàng Số</h3>
+          <p class="sol-desc" data-i18n="sol3_desc">Core banking, open banking APIs, mobile banking và KYC/eKYC — nền
+            tảng tài chính số thế hệ mới.</p>
+          <span class="sol-link"><span data-i18n="sol_learnmore">Tìm hiểu thêm</span> <svg
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg></span>
+        </a>
+
+        <!-- Payment -->
+        <a href="solutions/payment.html" class="solution-card reveal delay-1">
+          <div class="sol-icon sol-icon-purple">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+              <line x1="1" y1="10" x2="23" y2="10" />
+            </svg>
+          </div>
+          <h3 class="sol-title" data-i18n="sol4_title">Cổng Thanh toán</h3>
+          <p class="sol-desc" data-i18n="sol4_desc">Đa kênh thanh toán, QR Pay, BNPL và đối soát tự động — tích hợp
+            nhanh, bảo mật cao, uptime 99.9%.</p>
+          <span class="sol-link"><span data-i18n="sol_learnmore">Tìm hiểu thêm</span> <svg
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg></span>
+        </a>
+
+        <!-- Ecommerce -->
+        <a href="solutions/ecommerce.html" class="solution-card reveal delay-2">
+          <div class="sol-icon sol-icon-orange">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1" />
+              <circle cx="20" cy="21" r="1" />
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+            </svg>
+          </div>
+          <h3 class="sol-title" data-i18n="sol5_title">Thương mại Điện tử</h3>
+          <p class="sol-desc" data-i18n="sol5_desc">Nền tảng B2B/B2C, tích hợp marketplace và hệ thống loyalty — bán
+            hàng đa kênh, tăng trưởng bền vững.</p>
+          <span class="sol-link"><span data-i18n="sol_learnmore">Tìm hiểu thêm</span> <svg
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg></span>
+        </a>
+
+        <!-- AI -->
+        <a href="solutions/ai.html" class="solution-card reveal delay-3">
+          <div class="sol-icon sol-icon-pink">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a8 8 0 0 1 8 8v12l-4-4-2.5 2.5L11 18l-2.5 2.5L6 18l-4 4V10a8 8 0 0 1 8-8z" />
+            </svg>
+          </div>
+          <h3 class="sol-title" data-i18n="sol6_title">Giải pháp AI</h3>
+          <p class="sol-desc" data-i18n="sol6_desc">Chatbot, Callbot và bộ Agentic AI (Database, Report, ITS, KDB Agent)
+            — tự động hóa thông minh, hiệu quả vượt trội.</p>
+          <span class="sol-link"><span data-i18n="sol_learnmore">Tìm hiểu thêm</span> <svg
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+     AI SPOTLIGHT
+============================== -->
+  <section id="ai-spotlight" class="section">
+    <div class="bg-mesh" style="opacity:0.6"></div>
+    <div class="container" style="position:relative;z-index:2">
+      <div class="ai-spotlight-inner">
+        <!-- Left -->
+        <div class="ai-left-content">
+          <div class="section-label reveal" data-i18n="ai_label">Giải pháp AI</div>
+          <h2 class="section-title reveal delay-1" data-i18n="ai_title">Sức mạnh AI <span
+              style="color:var(--highlight)">Agentic</span><br />cho doanh nghiệp</h2>
+          <p class="section-subtitle reveal delay-2" data-i18n="ai_subtitle">
+            Bộ sản phẩm AI thế hệ tiếp theo — không chỉ trả lời câu hỏi, mà còn hành động, phân tích và ra quyết định
+            như một nhân viên thực sự.
+          </p>
+          <div class="ai-features-list">
+            <div class="ai-feature-item reveal delay-2">
+              <div class="ai-feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                </svg>
+              </div>
+              <div class="ai-feature-text">
+                <h4 data-i18n="ai_f1_title">Đa kênh tích hợp</h4>
+                <p data-i18n="ai_f1_desc">Web, Zalo, Facebook Messenger, điện thoại — một AI phục vụ mọi kênh liên lạc.
+                </p>
+              </div>
+            </div>
+            <div class="ai-feature-item reveal delay-3">
+              <div class="ai-feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg>
+              </div>
+              <div class="ai-feature-text">
+                <h4 data-i18n="ai_f2_title">Tự học &amp; Tối ưu liên tục</h4>
+                <p data-i18n="ai_f2_desc">Mô hình AI được fine-tune theo dữ liệu doanh nghiệp, cải thiện theo thời gian
+                  thực.</p>
+              </div>
+            </div>
+            <div class="ai-feature-item reveal delay-4">
+              <div class="ai-feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+              </div>
+              <div class="ai-feature-text">
+                <h4 data-i18n="ai_f3_title">Bảo mật &amp; On-premise</h4>
+                <p data-i18n="ai_f3_desc">Triển khai trên hạ tầng riêng của doanh nghiệp, dữ liệu không rời khỏi hệ
+                  thống.</p>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:32px" class="reveal delay-5">
+            <a href="solutions/ai.html" class="btn btn-primary" data-i18n="ai_demo">Xem demo AI →</a>
+          </div>
+        </div>
+
+        <!-- Right: product cards -->
+        <div class="ai-products-grid">
+          <a href="solutions/ai.html#Chatbot" class="ai-product-card featured reveal delay-1">
+            <div class="ai-tag">🤖 Agentic AI</div>
+            <div class="ai-product-name">Chatbot AI</div>
+            <div class="ai-product-desc" data-i18n="ai_p1_desc">AI hội thoại đa kênh cho chăm sóc khách hàng, bán hàng
+              và HR — hiểu tiếng Việt tự nhiên, phản hồi tức thì 24/7.</div>
+          </a>
+          <a href="solutions/ai.html#Callbot" class="ai-product-card reveal delay-2">
+            <div class="ai-tag">🎙️ Voice AI</div>
+            <div class="ai-product-name">Callbot</div>
+            <div class="ai-product-desc" data-i18n="ai_p2_desc">Bot giọng nói thay thế IVR, xử lý inbound/outbound tự
+              động với NLP tiếng Việt.</div>
+          </a>
+          <a href="solutions/ai.html#agentic" class="ai-product-card reveal delay-3">
+            <div class="ai-tag">🗃️ Agent</div>
+            <div class="ai-product-name">Database Agent</div>
+            <div class="ai-product-desc" data-i18n="ai_p3_desc">Truy vấn CSDL doanh nghiệp bằng ngôn ngữ tự nhiên, không
+              cần viết SQL.</div>
+          </a>
+          <a href="solutions/ai.html#agentic" class="ai-product-card reveal delay-3">
+            <div class="ai-tag">📊 Agent</div>
+            <div class="ai-product-name">Report Agent</div>
+            <div class="ai-product-desc" data-i18n="ai_p4_desc">Tự động tạo báo cáo kinh doanh và dashboard từ dữ liệu
+              thô theo lệnh AI.</div>
+          </a>
+          <a href="solutions/ai.html#agentic" class="ai-product-card reveal delay-4">
+            <div class="ai-tag">🖥️ Agent</div>
+            <div class="ai-product-name">ITS Agent</div>
+            <div class="ai-product-desc" data-i18n="ai_p5_desc">Hỗ trợ IT thông minh: phân loại ticket, đề xuất giải
+              pháp, tìm kiếm knowledge base.</div>
+          </a>
+          <a href="solutions/ai.html#agentic" class="ai-product-card reveal delay-4">
+            <div class="ai-tag">📚 Agent</div>
+            <div class="ai-product-name">KDB Agent</div>
+            <div class="ai-product-desc" data-i18n="ai_p6_desc">Quản lý tri thức nội bộ bằng AI — hỏi đáp tức thì từ tài
+              liệu doanh nghiệp.</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+     WHY DGGLOBAL
+============================== -->
+  <section id="why" class="section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:0">
+        <div class="section-label reveal" style="justify-content:center"><span
+            style="width:24px;height:2px;background:var(--highlight);border-radius:2px;display:inline-block;margin-right:8px"></span><span
+            data-i18n="why_label">Tại sao chọn DGlobal</span></div>
+        <h2 class="section-title reveal delay-1" style="text-align:center" data-i18n="why_title">Cam kết vượt
+          trội,<br />đồng hành dài lâu</h2>
+        <p class="section-subtitle reveal delay-2" style="text-align:center;margin:0 auto" data-i18n="why_subtitle">
+          Chúng tôi không chỉ cung cấp phần mềm — chúng tôi đồng hành cùng sự phát triển của doanh nghiệp bạn.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card reveal delay-1">
+          <div class="why-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <h3 class="why-title" data-i18n="why1_title">Bảo mật Cấp doanh nghiệp</h3>
+          <p class="why-desc" data-i18n="why1_desc">ISO 27001, mã hóa end-to-end, audit log đầy đủ — hệ thống được thiết
+            kế an toàn từ nền tảng.</p>
+        </div>
+        <div class="why-card reveal delay-2">
+          <div class="why-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+            </svg>
+          </div>
+          <h3 class="why-title" data-i18n="why2_title">Hiệu năng Vượt trội</h3>
+          <p class="why-desc" data-i18n="why2_desc">SLA 99.9% uptime, hạ tầng cloud-native, auto-scaling theo tải —
+            không bao giờ gián đoạn kinh doanh.</p>
+        </div>
+        <div class="why-card reveal delay-3">
+          <div class="why-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 8v4l3 3" />
+            </svg>
+          </div>
+          <h3 class="why-title" data-i18n="why3_title">Hỗ trợ 24/7</h3>
+          <p class="why-desc" data-i18n="why3_desc">Đội ngũ kỹ thuật sẵn sàng hỗ trợ mọi lúc — response time dưới 15
+            phút cho sự cố nghiêm trọng.</p>
+        </div>
+        <div class="why-card reveal delay-4">
+          <div class="why-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="8" y1="6" x2="21" y2="6" />
+              <line x1="8" y1="12" x2="21" y2="12" />
+              <line x1="8" y1="18" x2="21" y2="18" />
+              <line x1="3" y1="6" x2="3.01" y2="6" />
+              <line x1="3" y1="12" x2="3.01" y2="12" />
+              <line x1="3" y1="18" x2="3.01" y2="18" />
+            </svg>
+          </div>
+          <h3 class="why-title" data-i18n="why4_title">Tích hợp Linh hoạt</h3>
+          <p class="why-desc" data-i18n="why4_desc">API-first, hỗ trợ REST &amp; GraphQL, tích hợp dễ dàng với hệ thống
+            legacy — không phá vỡ quy trình hiện tại.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+     CLIENTS / LOGOS
+============================== -->
+  <section id="clients" class="section">
+    <div class="container">
+      <div class="clients-header">
+        <div class="section-label reveal" data-i18n="clients_label">Khách hàng tin tưởng</div>
+        <h2 class="section-title reveal delay-1" data-i18n="clients_title">Được tin dùng bởi<br />các doanh nghiệp hàng
+          đầu</h2>
+        <p class="section-subtitle reveal delay-2" style="margin:0 auto 48px" data-i18n="clients_sub">Từ startups đến
+          tập đoàn lớn — DGlobal là lựa chọn công nghệ của hàng trăm doanh nghiệp Việt Nam.</p>
+      </div>
+    </div>
+    <div class="logos-track-wrapper reveal">
+      <div class="logos-track" id="logosTrack">
+        <div class="logo-pill">VietinBank</div>
+        <div class="logo-pill">Vietcombank</div>
+        <div class="logo-pill">VNPT</div>
+        <div class="logo-pill">Viettel</div>
+        <div class="logo-pill">FPT Corp</div>
+        <div class="logo-pill">Vingroup</div>
+        <div class="logo-pill">Masan Group</div>
+        <div class="logo-pill">T&amp;T Group</div>
+        <div class="logo-pill">MBBank</div>
+        <div class="logo-pill">Techcombank</div>
+        <div class="logo-pill">Sacombank</div>
+        <div class="logo-pill">ACB Bank</div>
+        <!-- Duplicate for seamless loop -->
+        <div class="logo-pill">VietinBank</div>
+        <div class="logo-pill">Vietcombank</div>
+        <div class="logo-pill">VNPT</div>
+        <div class="logo-pill">Viettel</div>
+        <div class="logo-pill">FPT Corp</div>
+        <div class="logo-pill">Vingroup</div>
+        <div class="logo-pill">Masan Group</div>
+        <div class="logo-pill">T&amp;T Group</div>
+        <div class="logo-pill">MBBank</div>
+        <div class="logo-pill">Techcombank</div>
+        <div class="logo-pill">Sacombank</div>
+        <div class="logo-pill">ACB Bank</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+     TESTIMONIALS
+============================== -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <div class="testimonials-header">
+        <div class="section-label reveal" data-i18n="testi_label">Phản hồi khách hàng</div>
+        <h2 class="section-title reveal delay-1" data-i18n="testi_title">Khách hàng nói gì về<br />DGlobal</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal delay-1">
+          <div class="stars">
+            <span class="star">⭐</span><span class="star">⭐</span><span class="star">⭐</span><span
+              class="star">⭐</span><span class="star">⭐</span>
+          </div>
+          <div class="quote-mark">"</div>
+          <p class="testimonial-text" data-i18n="testi3_text">Cổng thanh toán của DGlobal tích hợp vào hệ thống của
+            chúng tôi trong 2 tuần. Uptime 99.99%, hỗ trợ QR Pay và BNPL giúp doanh thu tăng 25% trong quý đầu.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background:linear-gradient(135deg,#8B5CF6,#EC4899)">HM</div>
+            <div>
+              <div class="author-name">Hoàng Minh Đức</div>
+              <div class="author-title">CEO, ShopViet E-commerce</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal delay-2">
+          <div class="stars">
+            <span class="star">⭐</span><span class="star">⭐</span><span class="star">⭐</span><span
+              class="star">⭐</span><span class="star">⭐</span>
+          </div>
+          <div class="quote-mark">"</div>
+          <p class="testimonial-text" data-i18n="testi4_text">DGlobal đã giúp Dagoras triển khai hệ thống AI Chatbot đa
+            kênh trong thời gian kỷ lục. Chất lượng tư vấn và hỗ trợ kỹ thuật vượt trội, đội nhóm chuyên nghiệp và tận
+            tâm. Chúng tôi hoàn toàn tin tưởng vào năng lực công nghệ của DGlobal.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background:linear-gradient(135deg,#2563EB,#06B6D4)">DG</div>
+            <div>
+              <div class="author-name">Trần Quốc Đinh</div>
+              <div class="author-title">CTO, Dagoras</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal delay-3">
+          <div class="stars">
+            <span class="star">⭐</span><span class="star">⭐</span><span class="star">⭐</span><span
+              class="star">⭐</span><span class="star">⭐</span>
+          </div>
+          <div class="quote-mark">"</div>
+          <p class="testimonial-text" data-i18n="testi5_text">Nền tảng e-learning tích hợp AI của DGlobal đã thay đổi
+            hoàn toàn cách EduSmart vận hành. Hệ thống ổn định, tốc độ xử lý nhanh, và đội ngũ hỗ trợ luôn sẵn sàng
+            24/7. Đây là đối tác công nghệ lý tưởng cho doanh nghiệp giáo dục.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background:linear-gradient(135deg,#10B981,#06B6D4)">ES</div>
+            <div>
+              <div class="author-name">Nguyễn Thị Mai Anh</div>
+              <div class="author-title">CEO, EduSmart Vietnam</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+     CTA BANNER
+============================== -->
+  <section id="cta-banner">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="bg-mesh"></div>
+        <div class="section-label reveal" style="justify-content:center;position:relative;z-index:2"
+          data-i18n="cta_label">Bắt đầu ngay hôm nay</div>
+        <h2 class="section-title reveal delay-1" style="position:relative;z-index:2" data-i18n="cta_title">Sẵn sàng
+          chuyển đổi<br /><span style="color:var(--accent-hover)">doanh nghiệp của bạn?</span></h2>
+        <p class="reveal delay-2" style="position:relative;z-index:2" data-i18n="cta_sub">Liên hệ với chuyên gia của
+          chúng tôi để được tư vấn giải pháp phù hợp — hoàn toàn miễn phí.</p>
+        <div class="cta-buttons reveal delay-3" style="position:relative;z-index:2">
+          <a href="mailto:contact@dgglobal.vn" class="btn btn-primary" style="font-size:16px;padding:14px 32px">
+            <span data-i18n="cta_btn1">Liên hệ tư vấn miễn phí</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </a>
+          <a href="tel:+840981100001" class="btn btn-outline" style="font-size:16px;padding:14px 32px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z" />
+            </svg>
+            <span data-i18n="cta_btn2">Gọi ngay: 0981 100 001</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+     FOOTER
+============================== -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <div class="nav-logo" style="margin-bottom:16px">
+            <div class="logo-icon">DG</div>
+            DGlobal
+          </div>
+          <p class="footer-desc" data-i18n="footer_desc">DGlobal Technology Joint Stock Company — Giải pháp công nghệ
+            toàn diện cho doanh nghiệp số Việt Nam.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+            <a href="#" class="social-link" aria-label="Facebook">f</a>
+            <a href="#" class="social-link" aria-label="YouTube">▶</a>
+            <a href="#" class="social-link" aria-label="Zalo">Z</a>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div class="footer-col">
+          <h4 data-i18n="footer_sol">Giải pháp</h4>
+          <ul>
+            <li><a href="solutions/enterprise.html" data-i18n="sol1_title">Giải pháp Doanh nghiệp</a></li>
+            <li><a href="solutions/telecom.html" data-i18n="sol2_title">Dịch vụ Viễn thông</a></li>
+            <li><a href="solutions/banking.html" data-i18n="sol3_title">Ngân hàng Số</a></li>
+            <li><a href="solutions/payment.html" data-i18n="sol4_title">Cổng Thanh toán</a></li>
+            <li><a href="solutions/ecommerce.html" data-i18n="sol5_title">Thương mại Điện tử</a></li>
+            <li><a href="solutions/ai.html" data-i18n="sol6_title">Giải pháp AI</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer_ai">Sản phẩm AI</h4>
+          <ul>
+            <li><a href="solutions/ai.html#Chatbot">Chatbot</a></li>
+            <li><a href="solutions/ai.html#Callbot">Callbot</a></li>
+            <li><a href="solutions/ai.html#agentic">Database Agent</a></li>
+            <li><a href="solutions/ai.html#agentic">Report Agent</a></li>
+            <li><a href="solutions/ai.html#agentic">ITS Agent</a></li>
+            <li><a href="solutions/ai.html#agentic">KDB Agent</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer_company">Công ty</h4>
+          <ul>
+            <li><a href="index.html#hero" data-i18n="footer_about">Về DGlobal</a></li>
+            <li><a href="index.html#clients" data-i18n="footer_customers">Khách hàng</a></li>
+            <li><a href="tuyen-dung.html" data-i18n="footer_careers">Tuyển dụng</a></li>
+            <li><a href="index.html#cta-banner" data-i18n="footer_contact">Liên hệ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy" data-i18n="footer_copy">© 2025 DGlobal Technology JSC. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#" data-i18n="footer_privacy">Chính sách Bảo mật</a>
+          <a href="#" data-i18n="footer_terms">Điều khoản Dịch vụ</a>
+          <a href="#">Cookie</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==============================
+     CONTACT MODAL
+============================== -->
+  <div class="modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-header-text">
+          <h2 id="modalTitle" data-i18n="modal_title">Liên hệ với chúng tôi</h2>
+          <p data-i18n="modal_sub">Điền thông tin bên dưới, chúng tôi sẽ phản hồi trong vòng 24 giờ.</p>
+        </div>
+        <button class="modal-close" id="modalClose" aria-label="Đóng">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Form area -->
+      <div class="modal-form-area">
+        <form class="modal-body" id="contactForm" action="https://formsubmit.co/hann86@gmail.com" method="POST">
+          <!-- FormSubmit config -->
+          <input type="hidden" name="_subject" value="[DGlobal] Liên hệ mới từ website" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" value="" id="formNextUrl" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactName" data-i18n="modal_name">Họ và tên <span class="required">*</span></label>
+              <input type="text" id="contactName" name="ho_va_ten" data-i18n-ph="modal_ph_name"
+                placeholder="Nguyễn Văn A" autocomplete="name" />
+              <span class="field-error" id="errName" data-i18n="modal_err_name">Vui lòng nhập họ và tên</span>
+            </div>
+            <div class="form-group">
+              <label for="contactPhone" data-i18n="modal_phone">Số điện thoại <span class="required">*</span></label>
+              <input type="tel" id="contactPhone" name="so_dien_thoai" data-i18n-ph="modal_ph_phone"
+                placeholder="0912 345 678" autocomplete="tel" />
+              <span class="field-error" id="errPhone" data-i18n="modal_err_phone">Vui lòng nhập số điện thoại hợp
+                lệ</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="contactEmail" data-i18n="modal_email">Email <span class="required">*</span></label>
+            <input type="email" id="contactEmail" name="email" data-i18n-ph="modal_ph_email"
+              placeholder="email@company.com" autocomplete="email" />
+            <span class="field-error" id="errEmail" data-i18n="modal_err_email">Vui lòng nhập địa chỉ email hợp
+              lệ</span>
+          </div>
+
+          <div class="form-group">
+            <label for="contactMessage" data-i18n="modal_msg">Nội dung liên hệ <span class="required">*</span></label>
+            <textarea id="contactMessage" name="noi_dung" data-i18n-ph="modal_ph_msg"
+              placeholder="Mô tả nhu cầu hoặc câu hỏi của bạn..."></textarea>
+            <span class="field-error" id="errMessage" data-i18n="modal_err_msg">Vui lòng nhập nội dung liên hệ</span>
+          </div>
+        </form>
+
+        <div class="modal-footer">
+          <button class="btn-submit" id="submitBtn" type="button">
+            <div class="spinner"></div>
+            <span class="btn-text" data-i18n="modal_submit">Gửi thông tin</span>
+          </button>
+          <p class="form-note" data-i18n="modal_note">Thông tin của bạn được bảo mật tuyệt đối và chỉ dùng để liên hệ.
+          </p>
+        </div>
+      </div>
+
+      <!-- Success state -->
+      <div class="modal-success" id="modalSuccess">
+        <div class="success-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+        </div>
+        <div class="success-title" data-i18n="modal_success_title">Gửi thành công!</div>
+        <p class="success-desc" data-i18n="modal_success_desc">Cảm ơn bạn đã liên hệ. Đội ngũ DGlobal sẽ phản hồi trong
+          vòng <strong style="color:var(--accent-hover)">24 giờ</strong> làm việc.</p>
+        <button class="btn btn-primary" onclick="closeModal()" style="margin-top:8px"
+          data-i18n="modal_close">Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOTLINE FLOATING BUTTON -->
+  <a href="tel:+840981100001" class="hotline-float" aria-label="Gọi hotline DGlobal">
+    <span class="hotline-label" data-i18n="hotline_label">📞 0981 100 001</span>
+    <div class="hotline-btn">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+      </svg>
+    </div>
+  </a>
+
+  <script src="js/main.js"></script>
+  <script src="js/hotline.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/i18n.js"></script>
+</body>
+
+</html>

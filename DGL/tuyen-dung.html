@@ -1,0 +1,431 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tuyển dụng — DGlobal</title>
+  <meta name="description"
+    content="Cơ hội nghề nghiệp tại DGlobal Technology. Tham gia đội ngũ của chúng tôi để cùng xây dựng các giải pháp công nghệ hàng đầu.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/tuyen-dung.css" />
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="DGlobal Homepage">
+        <div class="logo-icon">DG</div>
+        DGlobal
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html#solutions" data-i18n="nav_solutions">Giải pháp</a>
+        <a href="index.html#ai-spotlight" data-i18n="nav_products">Sản phẩm</a>
+        <a href="index.html#why" data-i18n="nav_about">Về chúng tôi</a>
+        <a href="index.html#clients" data-i18n="nav_clients">Khách hàng</a>
+        <a href="tuyen-dung.html" class="active" data-i18n="nav_careers">Tuyển dụng</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="#" class="btn btn-primary open-modal-btn" data-i18n="career_apply">Ứng tuyển</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <nav class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation">
+    <a href="index.html#solutions" data-i18n="nav_solutions">Giải pháp</a>
+    <a href="index.html#ai-spotlight" data-i18n="nav_products">Sản phẩm</a>
+    <a href="index.html#why" data-i18n="nav_about">Về chúng tôi</a>
+    <a href="index.html#clients" data-i18n="nav_clients">Khách hàng</a>
+    <a href="tuyen-dung.html" data-i18n="nav_careers">Tuyển dụng</a>
+    <a href="#" class="btn btn-primary drawer-cta open-modal-btn" style="margin-top:24px;justify-content:center;"
+      data-i18n="career_apply">Ứng tuyển</a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="page-hero">
+    <div class="breadcrumb reveal">
+      <a href="index.html">Trang chủ</a>
+      <span>›</span>
+      <span style="color:var(--text)">Tuyển dụng</span>
+    </div>
+    <h1 class="reveal delay-1" data-i18n="career_hero_title">Cùng DGlobal <span>Kiến tạo Tương lai</span></h1>
+    <p class="reveal delay-2" data-i18n="career_hero_sub">Chúng tôi đang tìm kiếm những tài năng xuất sắc để cùng nhau
+      xây dựng các giải pháp công nghệ đột phá cho doanh nghiệp Việt Nam và khu vực.</p>
+  </div>
+
+  <!-- JOB LISTINGS -->
+  <section class="section">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label" data-i18n="career_jobs_label">Vị trí tuyển dụng</div>
+        <h2 class="section-title" data-i18n="career_jobs_title">Cơ hội <span>Nghề nghiệp</span></h2>
+        <p class="section-desc" data-i18n="career_jobs_sub">DGlobal đang mở rộng đội ngũ với các vị trí hấp dẫn trong
+          lĩnh vực công nghệ. Tất cả vị trí đều có cơ hội làm việc hybrid và lộ trình thăng tiến rõ ràng.</p>
+      </div>
+
+      <div class="jobs-grid">
+
+        <!-- Java Developer Full Stack -->
+        <div class="job-card reveal delay-1">
+          <div class="job-icon">☕</div>
+          <div>
+            <div class="job-title">Java Developer Full Stack</div>
+            <div class="job-meta" style="margin-top:8px">
+              <span class="job-tag qty">05 vị trí</span>
+              <span class="job-tag">Full-time</span>
+              <span class="job-tag loc">📍 Hà Nội / TP.HCM</span>
+            </div>
+          </div>
+          <p class="job-desc">Phát triển và duy trì các ứng dụng doanh nghiệp quy mô lớn sử dụng Java Spring Boot
+            (backend) và React/Angular (frontend). Tham gia thiết kế kiến trúc microservices cho các sản phẩm fintech và
+            ERP.</p>
+          <ul class="job-reqs">
+            <li>Tối thiểu 2 năm kinh nghiệm với Java Spring Boot</li>
+            <li>Thành thạo React hoặc Angular (TypeScript)</li>
+            <li>Kinh nghiệm với RESTful API, MySQL / PostgreSQL</li>
+            <li>Hiểu biết về Docker, CI/CD pipeline</li>
+            <li>Ưu tiên có kinh nghiệm fintech hoặc ERP</li>
+          </ul>
+          <div class="job-footer">
+            <span class="job-salary" data-i18n="career_salary">Thỏa thuận · Cạnh tranh</span>
+            <button class="btn-apply show-hotline-btn" data-i18n="career_contact">Liên hệ</button>
+          </div>
+        </div>
+
+        <!-- Data Analysis -->
+        <div class="job-card reveal delay-2">
+          <div class="job-icon">📊</div>
+          <div>
+            <div class="job-title">Data Analysis</div>
+            <div class="job-meta" style="margin-top:8px">
+              <span class="job-tag qty">09 vị trí</span>
+              <span class="job-tag">Full-time</span>
+              <span class="job-tag loc">📍 Hà Nội / TP.HCM</span>
+            </div>
+          </div>
+          <p class="job-desc">Phân tích dữ liệu kinh doanh, xây dựng dashboard và báo cáo, hỗ trợ ra quyết định dựa trên
+            dữ liệu cho các khách hàng ngân hàng, bán lẻ và doanh nghiệp.</p>
+          <ul class="job-reqs">
+            <li>Thành thạo SQL, Python (pandas, numpy)</li>
+            <li>Kinh nghiệm với Power BI hoặc Tableau</li>
+            <li>Kỹ năng thống kê và tư duy phân tích tốt</li>
+            <li>Hiểu biết về quy trình ETL cơ bản</li>
+            <li>Giao tiếp tốt, khả năng trình bày insight rõ ràng</li>
+          </ul>
+          <div class="job-footer">
+            <span class="job-salary" data-i18n="career_salary">Thỏa thuận · Cạnh tranh</span>
+            <button class="btn-apply show-hotline-btn" data-i18n="career_contact">Liên hệ</button>
+          </div>
+        </div>
+
+        <!-- Data Engineering -->
+        <div class="job-card reveal delay-3">
+          <div class="job-icon">⚙️</div>
+          <div>
+            <div class="job-title">Data Engineering</div>
+            <div class="job-meta" style="margin-top:8px">
+              <span class="job-tag qty">11 vị trí</span>
+              <span class="job-tag">Full-time</span>
+              <span class="job-tag loc">📍 Hà Nội / TP.HCM</span>
+            </div>
+          </div>
+          <p class="job-desc">Thiết kế và xây dựng data pipeline, data warehouse, data lakehouse phục vụ các hệ thống AI
+            và phân tích dữ liệu tại DGlobal và đối tác.</p>
+          <ul class="job-reqs">
+            <li>Kinh nghiệm với Apache Spark, Kafka, Airflow</li>
+            <li>Thành thạo Python, SQL; hiểu biết Scala là lợi thế</li>
+            <li>Kinh nghiệm với cloud data platform (AWS/GCP/Azure)</li>
+            <li>Xây dựng và vận hành data warehouse / data lake</li>
+            <li>Ưu tiên có kinh nghiệm với dbt, Iceberg, Delta Lake</li>
+          </ul>
+          <div class="job-footer">
+            <span class="job-salary" data-i18n="career_salary">Thỏa thuận · Cạnh tranh</span>
+            <button class="btn-apply show-hotline-btn" data-i18n="career_contact">Liên hệ</button>
+          </div>
+        </div>
+
+        <!-- Business Analysis -->
+        <div class="job-card reveal delay-4">
+          <div class="job-icon">📋</div>
+          <div>
+            <div class="job-title">Business Analysis</div>
+            <div class="job-meta" style="margin-top:8px">
+              <span class="job-tag qty">06 vị trí</span>
+              <span class="job-tag">Full-time</span>
+              <span class="job-tag loc">📍 Hà Nội / TP.HCM</span>
+            </div>
+          </div>
+          <p class="job-desc">Cầu nối giữa khách hàng và đội ngũ kỹ thuật, thu thập yêu cầu, phân tích nghiệp vụ và định
+            nghĩa giải pháp cho các dự án ERP, banking và fintech.</p>
+          <ul class="job-reqs">
+            <li>Tối thiểu 2 năm kinh nghiệm BA trong lĩnh vực CNTT</li>
+            <li>Thành thạo viết tài liệu BRD, FSD, user story</li>
+            <li>Hiểu biết về quy trình nghiệp vụ ngân hàng / tài chính là lợi thế</li>
+            <li>Kỹ năng giao tiếp và thuyết trình xuất sắc</li>
+            <li>Chứng chỉ CBAP hoặc CCBA là điểm cộng</li>
+          </ul>
+          <div class="job-footer">
+            <span class="job-salary" data-i18n="career_salary">Thỏa thuận · Cạnh tranh</span>
+            <button class="btn-apply show-hotline-btn" data-i18n="career_contact">Liên hệ</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY JOIN -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="reveal" style="text-align:center;margin-bottom:0">
+        <div class="section-label" data-i18n="career_why_label">Tại sao chọn DGlobal?</div>
+        <h2 class="section-title" data-i18n="career_why_title">Môi trường <span>Phát triển</span></h2>
+      </div>
+      <div class="benefits-grid" style="margin-top:40px">
+        <div class="benefit-card reveal delay-1">
+          <div class="benefit-icon">💰</div>
+          <div class="benefit-title">Lương thưởng cạnh tranh</div>
+          <div class="benefit-desc">Mức lương top thị trường, thưởng hiệu suất hàng quý và tháng lương 13.</div>
+        </div>
+        <div class="benefit-card reveal delay-2">
+          <div class="benefit-icon">🚀</div>
+          <div class="benefit-title">Lộ trình thăng tiến rõ ràng</div>
+          <div class="benefit-desc">Career path minh bạch từ junior đến tech lead / architect, được đánh giá 6
+            tháng/lần.</div>
+        </div>
+        <div class="benefit-card reveal delay-3">
+          <div class="benefit-icon">🎓</div>
+          <div class="benefit-title">Đào tạo & Phát triển</div>
+          <div class="benefit-desc">Ngân sách học tập hàng năm, hỗ trợ chứng chỉ AWS, Google Cloud, PMP, CBAP.</div>
+        </div>
+        <div class="benefit-card reveal delay-4">
+          <div class="benefit-icon">🏡</div>
+          <div class="benefit-title">Hybrid Working</div>
+          <div class="benefit-desc">Làm việc linh hoạt, kết hợp office và remote theo dự án và cá nhân.</div>
+        </div>
+        <div class="benefit-card reveal delay-1">
+          <div class="benefit-icon">🏥</div>
+          <div class="benefit-title">Bảo hiểm toàn diện</div>
+          <div class="benefit-desc">BHXH đầy đủ, bảo hiểm sức khỏe cao cấp cho bản thân và người thân.</div>
+        </div>
+        <div class="benefit-card reveal delay-2">
+          <div class="benefit-icon">🌏</div>
+          <div class="benefit-title">Dự án quốc tế</div>
+          <div class="benefit-desc">Cơ hội làm việc với đối tác và khách hàng trong khu vực Đông Nam Á.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section">
+    <div class="container">
+      <div class="reveal" style="text-align:center">
+        <div class="section-label" data-i18n="career_process_label">Quy trình tuyển dụng</div>
+        <h2 class="section-title" data-i18n="career_process_title">Từ hồ sơ đến <span>Offer Letter</span></h2>
+      </div>
+      <div class="process-steps">
+        <div class="process-step reveal delay-1">
+          <div class="step-num">1</div>
+          <div class="step-title">Nộp hồ sơ</div>
+          <div class="step-desc">Gửi CV qua form ứng tuyển hoặc email tuyendung@dgglobal.vn</div>
+        </div>
+        <div class="process-step reveal delay-2">
+          <div class="step-num">2</div>
+          <div class="step-title">Sàng lọc CV</div>
+          <div class="step-desc">Đội HR xem xét hồ sơ và phản hồi trong vòng 3 ngày làm việc</div>
+        </div>
+        <div class="process-step reveal delay-3">
+          <div class="step-num">3</div>
+          <div class="step-title">Phỏng vấn kỹ thuật</div>
+          <div class="step-desc">Bài test online và phỏng vấn chuyên môn với Tech Lead (45–60 phút)</div>
+        </div>
+        <div class="process-step reveal delay-4">
+          <div class="step-num">4</div>
+          <div class="step-title">Offer & Onboard</div>
+          <div class="step-desc">Nhận offer letter, ký hợp đồng và bắt đầu chương trình onboarding chính thức</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-inner reveal">
+      <h2 data-i18n="career_cta_title">Sẵn sàng tham gia <span
+          style="background:linear-gradient(135deg,#2563EB,#06B6D4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">đội
+          ngũ DGlobal</span>?</h2>
+      <p data-i18n="career_cta_sub">Gửi CV ngay hôm nay và là một phần của hành trình số hóa doanh nghiệp Việt Nam cùng
+        chúng tôi.</p>
+      <div class="cta-btns">
+        <button class="btn btn-primary open-modal-btn"
+          style="padding:12px 28px;font-size:15px;font-weight:600;border-radius:8px;border:none;cursor:pointer"
+          data-i18n="career_cta_btn">Ứng tuyển ngay</button>
+        <a href="mailto:tuyendung@dgglobal.vn" class="btn-outline" data-i18n="career_cta_email">Email HR trực tiếp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+     FOOTER
+============================== -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <div class="nav-logo" style="margin-bottom:16px">
+            <div class="logo-icon">DG</div>
+            DGlobal
+          </div>
+          <p class="footer-desc" data-i18n="footer_desc">DGlobal Technology Joint Stock Company — Giải pháp công nghệ
+            toàn diện cho doanh nghiệp số Việt Nam.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+            <a href="#" class="social-link" aria-label="Facebook">f</a>
+            <a href="#" class="social-link" aria-label="YouTube">▶</a>
+            <a href="#" class="social-link" aria-label="Zalo">Z</a>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div class="footer-col">
+          <h4 data-i18n="footer_sol">Giải pháp</h4>
+          <ul>
+            <li><a href="solutions/enterprise.html" data-i18n="sol1_title">Giải pháp Doanh nghiệp</a></li>
+            <li><a href="solutions/telecom.html" data-i18n="sol2_title">Dịch vụ Viễn thông</a></li>
+            <li><a href="solutions/banking.html" data-i18n="sol3_title">Ngân hàng Số</a></li>
+            <li><a href="solutions/payment.html" data-i18n="sol4_title">Cổng Thanh toán</a></li>
+            <li><a href="solutions/ecommerce.html" data-i18n="sol5_title">Thương mại Điện tử</a></li>
+            <li><a href="solutions/ai.html" data-i18n="sol6_title">Giải pháp AI</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer_ai">Sản phẩm AI</h4>
+          <ul>
+            <li><a href="solutions/ai.html#Chatbot">Chatbot</a></li>
+            <li><a href="solutions/ai.html#Callbot">Callbot</a></li>
+            <li><a href="solutions/ai.html#agentic">Database Agent</a></li>
+            <li><a href="solutions/ai.html#agentic">Report Agent</a></li>
+            <li><a href="solutions/ai.html#agentic">ITS Agent</a></li>
+            <li><a href="solutions/ai.html#agentic">KDB Agent</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer_company">Công ty</h4>
+          <ul>
+            <li><a href="index.html#hero" data-i18n="footer_about">Về DGlobal</a></li>
+            <li><a href="index.html#clients" data-i18n="footer_customers">Khách hàng</a></li>
+            <li><a href="tuyen-dung.html" data-i18n="footer_careers">Tuyển dụng</a></li>
+            <li><a href="index.html#cta-banner" data-i18n="footer_contact">Liên hệ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy" data-i18n="footer_copy">© 2025 DGlobal Technology JSC. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#" data-i18n="footer_privacy">Chính sách Bảo mật</a>
+          <a href="#" data-i18n="footer_terms">Điều khoản Dịch vụ</a>
+          <a href="#">Cookie</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CONTACT MODAL -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose" aria-label="Đóng">✕</button>
+      <div class="modal-form-area" id="modalFormArea">
+        <div class="modal-title" id="modalTitle">Ứng tuyển tại DGlobal</div>
+        <div class="modal-subtitle">Điền thông tin bên dưới — HR sẽ liên hệ trong 1–2 ngày làm việc.</div>
+        <form id="contactForm" action="https://formsubmit.co/ajax/hann86@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="[DGlobal] Ứng tuyển — Tuyển dụng">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="position" id="positionField" value="">
+          <div class="form-group" id="grpName">
+            <label for="name">Họ và tên *</label>
+            <input type="text" id="name" name="name" placeholder="Nguyễn Văn A" autocomplete="name">
+            <div class="form-error">Vui lòng nhập họ tên</div>
+          </div>
+          <div class="form-group" id="grpPhone">
+            <label for="phone">Số điện thoại *</label>
+            <input type="tel" id="phone" name="phone" placeholder="0912 345 678" autocomplete="tel">
+            <div class="form-error">Vui lòng nhập số điện thoại hợp lệ</div>
+          </div>
+          <div class="form-group" id="grpEmail">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="email@example.com" autocomplete="email">
+            <div class="form-error">Vui lòng nhập email hợp lệ</div>
+          </div>
+          <div class="form-group">
+            <label for="positionSelect">Vị trí ứng tuyển</label>
+            <select id="positionSelect" name="position_apply">
+              <option value="">-- Chọn vị trí --</option>
+              <option value="Java Developer Full Stack">Java Developer Full Stack (05 vị trí)</option>
+              <option value="Data Analysis">Data Analysis (09 vị trí)</option>
+              <option value="Data Engineering">Data Engineering (11 vị trí)</option>
+              <option value="Business Analysis">Business Analysis (06 vị trí)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Giới thiệu bản thân / Link CV</label>
+            <textarea id="message" name="message"
+              placeholder="Mô tả ngắn về kinh nghiệm của bạn hoặc dán link CV (Google Drive, LinkedIn...)"></textarea>
+          </div>
+          <button type="button" class="btn-submit" id="submitBtn">Gửi hồ sơ ứng tuyển</button>
+        </form>
+      </div>
+      <div class="modal-success" id="modalSuccess">
+        <div class="success-icon">🎉</div>
+        <div class="success-title">Hồ sơ đã được gửi!</div>
+        <div class="success-desc">Cảm ơn bạn đã quan tâm đến DGlobal. Đội ngũ HR sẽ liên hệ với bạn trong 1–2 ngày làm
+          việc.</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/tuyen-dung.js"></script>
+  <script src="js/i18n.js"></script>
+
+  <!-- HOTLINE POPUP -->
+  <div class="hotline-popup" id="hotlinePopup" role="dialog" aria-modal="true">
+    <div class="hotline-overlay" id="hotlineOverlay"></div>
+    <div class="hotline-box">
+      <button class="hotline-close" id="hotlineClose" aria-label="Đóng">✕</button>
+      <h3>📞 Liên hệ tuyển dụng</h3>
+      <p>Gọi ngay để được tư vấn và giải đáp thắc mắc về vị trí ứng tuyển.</p>
+      <a href="tel:+840981100001" class="hotline-number">0981 100 001</a>
+    </div>
+  </div>
+
+  <!-- HOTLINE FLOATING BUTTON -->
+  <a href="tel:+840981100001" class="hotline-float" aria-label="Gọi hotline DGlobal">
+    <span class="hotline-label" data-i18n="hotline_label">📞 0981 100 001</span>
+    <div class="hotline-btn">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+      </svg>
+    </div>
+  </a>
+  <script src="js/hotline.js"></script>
+</body>
+
+</html>
