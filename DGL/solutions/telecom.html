@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Lao:wght@400;600;700&display=swap"
     rel="stylesheet" />
   <style>
     :root {
@@ -1622,8 +1622,8 @@
             <div class="uc-author">
               <div class="uc-avatar">TH</div>
               <div>
-                <div class="uc-author-name">Trần Hải Nam</div>
-                <div class="uc-author-title">CTO, VPBank Digital</div>
+                <div class="uc-author-name" data-i18n="tc_testi_name">Trần Hải Nam</div>
+                <div class="uc-author-title" data-i18n="tc_testi_job">CTO, VPBank Digital</div>
               </div>
             </div>
           </div>
@@ -1694,13 +1694,13 @@
         <p class="reveal delay-2" data-i18n="tc_cta_sub">Đặt lịch demo miễn phí — chuyên gia DGlobal sẽ tư vấn giải pháp
           phù hợp và cung cấp báo giá trong vòng 24 giờ.</p>
         <div class="cta-demo-buttons reveal delay-3">
-          <button class="btn-demo open-modal-btn" data-i18n="tc_cta_btn">
+          <button class="btn-demo open-modal-btn">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path
                 d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z" />
             </svg>
-            Liên hệ Demo ngay
+            <span data-i18n="tc_cta_btn">Liên hệ Demo ngay</span>
           </button>
           <a href="tel:+840981100001" class="btn btn-outline" style="font-size:16px;padding:14px 28px"
             data-i18n="tc_cta_call">Gọi: 0981 100 01</a>
@@ -1782,7 +1782,7 @@
           </svg></button>
       </div>
       <div class="modal-form-area">
-        <form class="modal-body" id="contactForm" action="https://formsubmit.co/hann86@gmail.com" method="POST">
+        <form class="modal-body" id="contactForm" action="#" method="POST">
           <input type="hidden" name="_subject" value="[DGlobal] Đăng ký Demo — Dịch vụ Viễn thông" /><input
             type="hidden" name="_captcha" value="false" /><input type="hidden" name="_template" value="table" />
           <div class="form-row">
@@ -1826,6 +1826,7 @@
     </div>
   </div>
 
+  <script src="../js/config.js"></script>
   <script>
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 20), { passive: true });
@@ -1838,13 +1839,14 @@
     const io = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }); }, { threshold: .1, rootMargin: '0px 0px -60px 0px' });
     document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => io.observe(el));
     const modal = document.getElementById('contactModal'), modalClose = document.getElementById('modalClose'), submitBtn = document.getElementById('submitBtn'), contactForm = document.getElementById('contactForm'), modalSuccess = document.getElementById('modalSuccess'), modalFormArea = document.querySelector('.modal-form-area');
+    contactForm.action = 'https://formsubmit.co/ajax/' + window.DGConfig.CONTACT_EMAIL;
     function openModal() { modal.classList.add('open'); document.body.style.overflow = 'hidden'; contactForm.reset(); modalSuccess.classList.remove('show'); modalFormArea.classList.remove('hide'); submitBtn.classList.remove('loading'); submitBtn.disabled = false; document.querySelectorAll('.field-error').forEach(e => e.classList.remove('show')); document.querySelectorAll('.form-group input,.form-group textarea').forEach(el => el.classList.remove('error')); setTimeout(() => document.getElementById('contactName').focus(), 350); }
     function closeModal() { modal.classList.remove('open'); document.body.style.overflow = ''; }
     document.querySelectorAll('.open-modal-btn').forEach(btn => btn.addEventListener('click', e => { e.preventDefault(); openModal(); }));
     modalClose.addEventListener('click', closeModal); modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
     function validate() { let ok = true; const name = document.getElementById('contactName'), phone = document.getElementById('contactPhone'), email = document.getElementById('contactEmail'), msg = document.getElementById('contactMessage'); const setErr = (el, errId, cond) => { const errEl = document.getElementById(errId); if (cond) { el.classList.add('error'); errEl.classList.add('show'); ok = false; } else { el.classList.remove('error'); errEl.classList.remove('show'); } }; setErr(name, 'errName', name.value.trim().length < 2); setErr(phone, 'errPhone', !/^[0-9+\s\-()]{8,15}$/.test(phone.value.trim())); setErr(email, 'errEmail', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())); setErr(msg, 'errMessage', msg.value.trim().length < 5); return ok; }
-    submitBtn.addEventListener('click', async () => { if (!validate()) return; submitBtn.classList.add('loading'); submitBtn.disabled = true; const data = new FormData(contactForm); try { const res = await fetch('https://formsubmit.co/ajax/hann86@gmail.com', { method: 'POST', headers: { 'Accept': 'application/json' }, body: data }); if (res.ok) { modalFormArea.classList.add('hide'); modalSuccess.classList.add('show'); } else { throw new Error('fail'); } } catch { contactForm.submit(); } });
+    submitBtn.addEventListener('click', async () => { if (!validate()) return; submitBtn.classList.add('loading'); submitBtn.disabled = true; const data = new FormData(contactForm); try { const res = await fetch('https://formsubmit.co/ajax/' + window.DGConfig.CONTACT_EMAIL + '', { method: 'POST', headers: { 'Accept': 'application/json' }, body: data }); if (res.ok) { modalFormArea.classList.add('hide'); modalSuccess.classList.add('show'); } else { throw new Error('fail'); } } catch { contactForm.submit(); } });
   </script>
   <script src="../js/i18n.js"></script>
 

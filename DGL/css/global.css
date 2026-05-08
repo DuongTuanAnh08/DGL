@@ -36,7 +36,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'Noto Sans Lao', sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   font-size: 16px;

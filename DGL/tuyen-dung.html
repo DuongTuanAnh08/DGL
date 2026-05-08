@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Lao:wght@400;600;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="css/global.css" />
   <link rel="stylesheet" href="css/tuyen-dung.css" />
@@ -55,9 +55,9 @@
   <!-- HERO -->
   <div class="page-hero">
     <div class="breadcrumb reveal">
-      <a href="index.html">Trang chủ</a>
+      <a href="index.html" data-i18n="nav_home">Trang chủ</a>
       <span>›</span>
-      <span style="color:var(--text)">Tuyển dụng</span>
+      <span style="color:var(--text)" data-i18n="career_breadcrumb">Tuyển dụng</span>
     </div>
     <h1 class="reveal delay-1" data-i18n="career_hero_title">Cùng DGlobal <span>Kiến tạo Tương lai</span></h1>
     <p class="reveal delay-2" data-i18n="career_hero_sub">Chúng tôi đang tìm kiếm những tài năng xuất sắc để cùng nhau
@@ -78,24 +78,24 @@
 
         <!-- Java Developer Full Stack -->
         <div class="job-card reveal delay-1">
-          <div class="job-icon">☕</div>
           <div>
-            <div class="job-title">Java Developer Full Stack</div>
+            <div class="job-title" data-i18n="career_job1_title">Java Developer Full Stack</div>
             <div class="job-meta" style="margin-top:8px">
-              <span class="job-tag qty">05 vị trí</span>
-              <span class="job-tag">Full-time</span>
-              <span class="job-tag loc">📍 Hà Nội / TP.HCM</span>
+              <span class="job-tag qty" data-i18n="career_job1_qty">05 vị trí</span>
+              <span class="job-tag" data-i18n="career_job1_type">Full-time</span>
+              <span class="job-tag loc" data-i18n="career_job1_loc">Hà Nội / TP.HCM</span>
             </div>
           </div>
-          <p class="job-desc">Phát triển và duy trì các ứng dụng doanh nghiệp quy mô lớn sử dụng Java Spring Boot
+          <p class="job-desc" data-i18n="career_job1_desc">Phát triển và duy trì các ứng dụng doanh nghiệp quy mô lớn sử
+            dụng Java Spring Boot
             (backend) và React/Angular (frontend). Tham gia thiết kế kiến trúc microservices cho các sản phẩm fintech và
             ERP.</p>
           <ul class="job-reqs">
-            <li>Tối thiểu 2 năm kinh nghiệm với Java Spring Boot</li>
-            <li>Thành thạo React hoặc Angular (TypeScript)</li>
-            <li>Kinh nghiệm với RESTful API, MySQL / PostgreSQL</li>
-            <li>Hiểu biết về Docker, CI/CD pipeline</li>
-            <li>Ưu tiên có kinh nghiệm fintech hoặc ERP</li>
+            <li data-i18n="career_job1_req1">Tối thiểu 2 năm kinh nghiệm với Java Spring Boot</li>
+            <li data-i18n="career_job1_req2">Thành thạo React hoặc Angular (TypeScript)</li>
+            <li data-i18n="career_job1_req3">Kinh nghiệm với RESTful API, MySQL / PostgreSQL</li>
+            <li data-i18n="career_job1_req4">Hiểu biết về Docker, CI/CD pipeline</li>
+            <li data-i18n="career_job1_req5">Ưu tiên có kinh nghiệm fintech hoặc ERP</li>
           </ul>
           <div class="job-footer">
             <span class="job-salary" data-i18n="career_salary">Thỏa thuận · Cạnh tranh</span>
@@ -105,23 +105,23 @@
 
         <!-- Data Analysis -->
         <div class="job-card reveal delay-2">
-          <div class="job-icon">📊</div>
           <div>
-            <div class="job-title">Data Analysis</div>
+            <div class="job-title" data-i18n="career_job2_title">Data Analyst</div>
             <div class="job-meta" style="margin-top:8px">
-              <span class="job-tag qty">09 vị trí</span>
-              <span class="job-tag">Full-time</span>
-              <span class="job-tag loc">📍 Hà Nội / TP.HCM</span>
+              <span class="job-tag qty" data-i18n="career_job2_qty">09 vị trí</span>
+              <span class="job-tag" data-i18n="career_job2_type">Full-time</span>
+              <span class="job-tag loc" data-i18n="career_job2_loc">Hà Nội / TP.HCM</span>
             </div>
           </div>
-          <p class="job-desc">Phân tích dữ liệu kinh doanh, xây dựng dashboard và báo cáo, hỗ trợ ra quyết định dựa trên
+          <p class="job-desc" data-i18n="career_job2_desc">Phân tích dữ liệu kinh doanh, xây dựng dashboard và báo cáo,
+            hỗ trợ ra quyết định dựa trên
             dữ liệu cho các khách hàng ngân hàng, bán lẻ và doanh nghiệp.</p>
           <ul class="job-reqs">
-            <li>Thành thạo SQL, Python (pandas, numpy)</li>
-            <li>Kinh nghiệm với Power BI hoặc Tableau</li>
-            <li>Kỹ năng thống kê và tư duy phân tích tốt</li>
-            <li>Hiểu biết về quy trình ETL cơ bản</li>
-            <li>Giao tiếp tốt, khả năng trình bày insight rõ ràng</li>
+            <li data-i18n="career_job2_req1">Thành thạo SQL, Python (pandas, numpy)</li>
+            <li data-i18n="career_job2_req2">Kinh nghiệm với Power BI hoặc Tableau</li>
+            <li data-i18n="career_job2_req3">Kỹ năng thống kê và tư duy phân tích tốt</li>
+            <li data-i18n="career_job2_req4">Hiểu biết về quy trình ETL cơ bản</li>
+            <li data-i18n="career_job2_req5">Giao tiếp tốt, khả năng trình bày insight rõ ràng</li>
           </ul>
           <div class="job-footer">
             <span class="job-salary" data-i18n="career_salary">Thỏa thuận · Cạnh tranh</span>
@@ -131,23 +131,23 @@
 
         <!-- Data Engineering -->
         <div class="job-card reveal delay-3">
-          <div class="job-icon">⚙️</div>
           <div>
-            <div class="job-title">Data Engineering</div>
+            <div class="job-title" data-i18n="career_job3_title">Data Engineer</div>
             <div class="job-meta" style="margin-top:8px">
-              <span class="job-tag qty">11 vị trí</span>
-              <span class="job-tag">Full-time</span>
-              <span class="job-tag loc">📍 Hà Nội / TP.HCM</span>
+              <span class="job-tag qty" data-i18n="career_job3_qty">11 vị trí</span>
+              <span class="job-tag" data-i18n="career_job3_type">Full-time</span>
+              <span class="job-tag loc" data-i18n="career_job3_loc">Hà Nội / TP.HCM</span>
             </div>
           </div>
-          <p class="job-desc">Thiết kế và xây dựng data pipeline, data warehouse, data lakehouse phục vụ các hệ thống AI
+          <p class="job-desc" data-i18n="career_job3_desc">Thiết kế và xây dựng data pipeline, data warehouse, data
+            lakehouse phục vụ các hệ thống AI
             và phân tích dữ liệu tại DGlobal và đối tác.</p>
           <ul class="job-reqs">
-            <li>Kinh nghiệm với Apache Spark, Kafka, Airflow</li>
-            <li>Thành thạo Python, SQL; hiểu biết Scala là lợi thế</li>
-            <li>Kinh nghiệm với cloud data platform (AWS/GCP/Azure)</li>
-            <li>Xây dựng và vận hành data warehouse / data lake</li>
-            <li>Ưu tiên có kinh nghiệm với dbt, Iceberg, Delta Lake</li>
+            <li data-i18n="career_job3_req1">Kinh nghiệm với Apache Spark, Kafka, Airflow</li>
+            <li data-i18n="career_job3_req2">Thành thạo Python, SQL; hiểu biết Scala là lợi thế</li>
+            <li data-i18n="career_job3_req3">Kinh nghiệm với cloud data platform (AWS/GCP/Azure)</li>
+            <li data-i18n="career_job3_req4">Xây dựng và vận hành data warehouse / data lake</li>
+            <li data-i18n="career_job3_req5">Ưu tiên có kinh nghiệm với dbt, Iceberg, Delta Lake</li>
           </ul>
           <div class="job-footer">
             <span class="job-salary" data-i18n="career_salary">Thỏa thuận · Cạnh tranh</span>
@@ -157,23 +157,23 @@
 
         <!-- Business Analysis -->
         <div class="job-card reveal delay-4">
-          <div class="job-icon">📋</div>
           <div>
-            <div class="job-title">Business Analysis</div>
+            <div class="job-title" data-i18n="career_job4_title">Business Analyst</div>
             <div class="job-meta" style="margin-top:8px">
-              <span class="job-tag qty">06 vị trí</span>
-              <span class="job-tag">Full-time</span>
-              <span class="job-tag loc">📍 Hà Nội / TP.HCM</span>
+              <span class="job-tag qty" data-i18n="career_job4_qty">06 vị trí</span>
+              <span class="job-tag" data-i18n="career_job4_type">Full-time</span>
+              <span class="job-tag loc" data-i18n="career_job4_loc">Hà Nội / TP.HCM</span>
             </div>
           </div>
-          <p class="job-desc">Cầu nối giữa khách hàng và đội ngũ kỹ thuật, thu thập yêu cầu, phân tích nghiệp vụ và định
+          <p class="job-desc" data-i18n="career_job4_desc">Cầu nối giữa khách hàng và đội ngũ kỹ thuật, thu thập yêu
+            cầu, phân tích nghiệp vụ và định
             nghĩa giải pháp cho các dự án ERP, banking và fintech.</p>
           <ul class="job-reqs">
-            <li>Tối thiểu 2 năm kinh nghiệm BA trong lĩnh vực CNTT</li>
-            <li>Thành thạo viết tài liệu BRD, FSD, user story</li>
-            <li>Hiểu biết về quy trình nghiệp vụ ngân hàng / tài chính là lợi thế</li>
-            <li>Kỹ năng giao tiếp và thuyết trình xuất sắc</li>
-            <li>Chứng chỉ CBAP hoặc CCBA là điểm cộng</li>
+            <li data-i18n="career_job4_req1">Tối thiểu 2 năm kinh nghiệm BA trong lĩnh vực CNTT</li>
+            <li data-i18n="career_job4_req2">Thành thạo viết tài liệu BRD, FSD, user story</li>
+            <li data-i18n="career_job4_req3">Hiểu biết về quy trình nghiệp vụ ngân hàng / tài chính là lợi thế</li>
+            <li data-i18n="career_job4_req4">Kỹ năng giao tiếp và thuyết trình xuất sắc</li>
+            <li data-i18n="career_job4_req5">Chứng chỉ CBAP hoặc CCBA là điểm cộng</li>
           </ul>
           <div class="job-footer">
             <span class="job-salary" data-i18n="career_salary">Thỏa thuận · Cạnh tranh</span>
@@ -194,35 +194,35 @@
       </div>
       <div class="benefits-grid" style="margin-top:40px">
         <div class="benefit-card reveal delay-1">
-          <div class="benefit-icon">💰</div>
-          <div class="benefit-title">Lương thưởng cạnh tranh</div>
-          <div class="benefit-desc">Mức lương top thị trường, thưởng hiệu suất hàng quý và tháng lương 13.</div>
+          <div class="benefit-title" data-i18n="career_ben1_title">Lương thưởng cạnh tranh</div>
+          <div class="benefit-desc" data-i18n="career_ben1_desc">Mức lương top thị trường, thưởng hiệu suất hàng quý và
+            tháng lương 13.</div>
         </div>
         <div class="benefit-card reveal delay-2">
-          <div class="benefit-icon">🚀</div>
-          <div class="benefit-title">Lộ trình thăng tiến rõ ràng</div>
-          <div class="benefit-desc">Career path minh bạch từ junior đến tech lead / architect, được đánh giá 6
+          <div class="benefit-title" data-i18n="career_ben2_title">Lộ trình thăng tiến rõ ràng</div>
+          <div class="benefit-desc" data-i18n="career_ben2_desc">Career path minh bạch từ junior đến tech lead /
+            architect, được đánh giá 6
             tháng/lần.</div>
         </div>
         <div class="benefit-card reveal delay-3">
-          <div class="benefit-icon">🎓</div>
-          <div class="benefit-title">Đào tạo & Phát triển</div>
-          <div class="benefit-desc">Ngân sách học tập hàng năm, hỗ trợ chứng chỉ AWS, Google Cloud, PMP, CBAP.</div>
+          <div class="benefit-title" data-i18n="career_ben3_title">Đào tạo & Phát triển</div>
+          <div class="benefit-desc" data-i18n="career_ben3_desc">Ngân sách học tập hàng năm, hỗ trợ chứng chỉ AWS,
+            Google Cloud, PMP, CBAP.</div>
         </div>
         <div class="benefit-card reveal delay-4">
-          <div class="benefit-icon">🏡</div>
-          <div class="benefit-title">Hybrid Working</div>
-          <div class="benefit-desc">Làm việc linh hoạt, kết hợp office và remote theo dự án và cá nhân.</div>
+          <div class="benefit-title" data-i18n="career_ben4_title">Hybrid Working</div>
+          <div class="benefit-desc" data-i18n="career_ben4_desc">Làm việc linh hoạt, kết hợp office và remote theo dự án
+            và cá nhân.</div>
         </div>
         <div class="benefit-card reveal delay-1">
-          <div class="benefit-icon">🏥</div>
-          <div class="benefit-title">Bảo hiểm toàn diện</div>
-          <div class="benefit-desc">BHXH đầy đủ, bảo hiểm sức khỏe cao cấp cho bản thân và người thân.</div>
+          <div class="benefit-title" data-i18n="career_ben5_title">Bảo hiểm toàn diện</div>
+          <div class="benefit-desc" data-i18n="career_ben5_desc">BHXH đầy đủ, bảo hiểm sức khỏe cao cấp cho bản thân và
+            người thân.</div>
         </div>
         <div class="benefit-card reveal delay-2">
-          <div class="benefit-icon">🌏</div>
-          <div class="benefit-title">Dự án quốc tế</div>
-          <div class="benefit-desc">Cơ hội làm việc với đối tác và khách hàng trong khu vực Đông Nam Á.</div>
+          <div class="benefit-title" data-i18n="career_ben6_title">Dự án quốc tế</div>
+          <div class="benefit-desc" data-i18n="career_ben6_desc">Cơ hội làm việc với đối tác và khách hàng trong khu vực
+            Đông Nam Á.</div>
         </div>
       </div>
     </div>
@@ -238,23 +238,27 @@
       <div class="process-steps">
         <div class="process-step reveal delay-1">
           <div class="step-num">1</div>
-          <div class="step-title">Nộp hồ sơ</div>
-          <div class="step-desc">Gửi CV qua form ứng tuyển hoặc email tuyendung@dgglobal.vn</div>
+          <div class="step-title" data-i18n="career_step1_title">Nộp hồ sơ</div>
+          <div class="step-desc" data-i18n="career_step1_desc">Gửi CV qua form ứng tuyển hoặc email
+            tuyendung@dgglobal.vn</div>
         </div>
         <div class="process-step reveal delay-2">
           <div class="step-num">2</div>
-          <div class="step-title">Sàng lọc CV</div>
-          <div class="step-desc">Đội HR xem xét hồ sơ và phản hồi trong vòng 3 ngày làm việc</div>
+          <div class="step-title" data-i18n="career_step2_title">Sàng lọc CV</div>
+          <div class="step-desc" data-i18n="career_step2_desc">Đội HR xem xét hồ sơ và phản hồi trong vòng 3 ngày làm
+            việc</div>
         </div>
         <div class="process-step reveal delay-3">
           <div class="step-num">3</div>
-          <div class="step-title">Phỏng vấn kỹ thuật</div>
-          <div class="step-desc">Bài test online và phỏng vấn chuyên môn với Tech Lead (45–60 phút)</div>
+          <div class="step-title" data-i18n="career_step3_title">Phỏng vấn kỹ thuật</div>
+          <div class="step-desc" data-i18n="career_step3_desc">Bài test online và phỏng vấn chuyên môn với Tech Lead
+            (45–60 phút)</div>
         </div>
         <div class="process-step reveal delay-4">
           <div class="step-num">4</div>
-          <div class="step-title">Offer & Onboard</div>
-          <div class="step-desc">Nhận offer letter, ký hợp đồng và bắt đầu chương trình onboarding chính thức</div>
+          <div class="step-title" data-i18n="career_step4_title">Offer & Onboard</div>
+          <div class="step-desc" data-i18n="career_step4_desc">Nhận offer letter, ký hợp đồng và bắt đầu chương trình
+            onboarding chính thức</div>
         </div>
       </div>
     </div>
@@ -351,55 +355,63 @@
     <div class="modal-box">
       <button class="modal-close" id="modalClose" aria-label="Đóng">✕</button>
       <div class="modal-form-area" id="modalFormArea">
-        <div class="modal-title" id="modalTitle">Ứng tuyển tại DGlobal</div>
-        <div class="modal-subtitle">Điền thông tin bên dưới — HR sẽ liên hệ trong 1–2 ngày làm việc.</div>
-        <form id="contactForm" action="https://formsubmit.co/ajax/hann86@gmail.com" method="POST">
+        <div class="modal-title" id="modalTitle" data-i18n="career_modal_title">Ứng tuyển tại DGlobal</div>
+        <div class="modal-subtitle" data-i18n="career_modal_sub">Điền thông tin bên dưới — HR sẽ liên hệ trong 1–2 ngày
+          làm việc.</div>
+        <form id="contactForm" action="#" method="POST">
           <input type="hidden" name="_subject" value="[DGlobal] Ứng tuyển — Tuyển dụng">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="position" id="positionField" value="">
           <div class="form-group" id="grpName">
-            <label for="name">Họ và tên *</label>
-            <input type="text" id="name" name="name" placeholder="Nguyễn Văn A" autocomplete="name">
-            <div class="form-error">Vui lòng nhập họ tên</div>
+            <label for="name"><span data-i18n="form_name">Họ và tên</span> *</label>
+            <input type="text" id="name" name="name" data-i18n-ph="form_name_ph" placeholder="Nguyễn Văn A"
+              autocomplete="name">
+            <div class="form-error" data-i18n="form_name_err">Vui lòng nhập họ tên</div>
           </div>
           <div class="form-group" id="grpPhone">
-            <label for="phone">Số điện thoại *</label>
-            <input type="tel" id="phone" name="phone" placeholder="0912 345 678" autocomplete="tel">
-            <div class="form-error">Vui lòng nhập số điện thoại hợp lệ</div>
+            <label for="phone"><span data-i18n="form_phone">Số điện thoại</span> *</label>
+            <input type="tel" id="phone" name="phone" data-i18n-ph="form_phone_ph" placeholder="0912 345 678"
+              autocomplete="tel">
+            <div class="form-error" data-i18n="form_phone_err">Vui lòng nhập số điện thoại hợp lệ</div>
           </div>
           <div class="form-group" id="grpEmail">
-            <label for="email">Email *</label>
-            <input type="email" id="email" name="email" placeholder="email@example.com" autocomplete="email">
-            <div class="form-error">Vui lòng nhập email hợp lệ</div>
+            <label for="email"><span data-i18n="form_email">Email</span> *</label>
+            <input type="email" id="email" name="email" data-i18n-ph="form_email_ph" placeholder="email@example.com"
+              autocomplete="email">
+            <div class="form-error" data-i18n="form_email_err">Vui lòng nhập email hợp lệ</div>
           </div>
           <div class="form-group">
-            <label for="positionSelect">Vị trí ứng tuyển</label>
+            <label for="positionSelect" data-i18n="career_form_pos_label">Vị trí ứng tuyển</label>
             <select id="positionSelect" name="position_apply">
-              <option value="">-- Chọn vị trí --</option>
-              <option value="Java Developer Full Stack">Java Developer Full Stack (05 vị trí)</option>
-              <option value="Data Analysis">Data Analysis (09 vị trí)</option>
-              <option value="Data Engineering">Data Engineering (11 vị trí)</option>
-              <option value="Business Analysis">Business Analysis (06 vị trí)</option>
+              <option value="" data-i18n="career_form_pos_ph">-- Chọn vị trí --</option>
+              <option value="Java Developer Full Stack" data-i18n="career_form_pos_opt1">Java Developer Full Stack (05
+                vị trí)</option>
+              <option value="Data Analyst" data-i18n="career_form_pos_opt2">Data Analyst (09 vị trí)</option>
+              <option value="Data Engineer" data-i18n="career_form_pos_opt3">Data Engineer (11 vị trí)</option>
+              <option value="Business Analyst" data-i18n="career_form_pos_opt4">Business Analyst (06 vị trí)</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="message">Giới thiệu bản thân / Link CV</label>
-            <textarea id="message" name="message"
+            <label for="message" data-i18n="career_form_msg_label">Giới thiệu bản thân / Link CV</label>
+            <textarea id="message" name="message" data-i18n-ph="career_form_msg_ph"
               placeholder="Mô tả ngắn về kinh nghiệm của bạn hoặc dán link CV (Google Drive, LinkedIn...)"></textarea>
           </div>
-          <button type="button" class="btn-submit" id="submitBtn">Gửi hồ sơ ứng tuyển</button>
+          <button type="button" class="btn-submit" id="submitBtn" data-i18n="career_modal_submit">Gửi hồ sơ ứng
+            tuyển</button>
         </form>
       </div>
       <div class="modal-success" id="modalSuccess">
-        <div class="success-icon">🎉</div>
-        <div class="success-title">Hồ sơ đã được gửi!</div>
-        <div class="success-desc">Cảm ơn bạn đã quan tâm đến DGlobal. Đội ngũ HR sẽ liên hệ với bạn trong 1–2 ngày làm
+        <div class="success-title" data-i18n="career_modal_success_title">Hồ sơ đã được gửi!</div>
+        <div class="success-desc" data-i18n="career_modal_success_desc">Cảm ơn bạn đã quan tâm đến DGlobal. Đội ngũ HR
+          sẽ liên hệ với bạn trong 1–2 ngày làm
           việc.</div>
+        <button class="btn-submit" id="modalSuccessClose" style="margin-top:20px" data-i18n="modal_close">Đóng</button>
       </div>
     </div>
   </div>
 
+  <script src="js/config.js"></script>
   <script src="js/main.js"></script>
   <script src="js/tuyen-dung.js"></script>
   <script src="js/i18n.js"></script>
@@ -409,8 +421,8 @@
     <div class="hotline-overlay" id="hotlineOverlay"></div>
     <div class="hotline-box">
       <button class="hotline-close" id="hotlineClose" aria-label="Đóng">✕</button>
-      <h3>📞 Liên hệ tuyển dụng</h3>
-      <p>Gọi ngay để được tư vấn và giải đáp thắc mắc về vị trí ứng tuyển.</p>
+      <h3 data-i18n="career_hotline_title">📞 Liên hệ tuyển dụng</h3>
+      <p data-i18n="career_hotline_desc">Gọi ngay để được tư vấn và giải đáp thắc mắc về vị trí ứng tuyển.</p>
       <a href="tel:+840981100001" class="hotline-number">0981 100 001</a>
     </div>
   </div>

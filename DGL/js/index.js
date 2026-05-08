@@ -41,6 +41,7 @@ const submitBtn = document.getElementById('submitBtn');
 const contactForm = document.getElementById('contactForm');
 const modalSuccess = document.getElementById('modalSuccess');
 const modalFormArea = document.querySelector('.modal-form-area');
+contactForm.action = 'https://formsubmit.co/ajax/' + window.DGConfig.CONTACT_EMAIL;
 
 function openModal() {
   modal.classList.add('open');
@@ -85,7 +86,7 @@ function validate() {
   };
 
   setErr(name,  'errName',    name.value.trim().length < 2);
-  setErr(phone, 'errPhone',   !/^[0-9\s\+\-]{8,15}$/.test(phone.value.trim()));
+  setErr(phone, 'errPhone',   !/^[0-9+\s\-()]{8,15}$/.test(phone.value.trim()));
   setErr(email, 'errEmail',   !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()));
   setErr(msg,   'errMessage', msg.value.trim().length < 5);
   return ok;
@@ -107,7 +108,7 @@ submitBtn.addEventListener('click', async () => {
   submitBtn.disabled = true;
   const data = new FormData(contactForm);
   try {
-    const res  = await fetch('https://formsubmit.co/ajax/hann86@gmail.com', {
+    const res  = await fetch('https://formsubmit.co/ajax/' + window.DGConfig.CONTACT_EMAIL, {
       method: 'POST',
       headers: { 'Accept': 'application/json' },
       body: data

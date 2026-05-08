@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Lao:wght@400;600;700&display=swap"
     rel="stylesheet" />
   <style>
     :root {
@@ -1409,8 +1409,8 @@
     <div class="container" style="position:relative;z-index:2">
       <div class="sol-hero-inner">
         <div>
-          <div class="sol-hero-breadcrumb reveal"><a href="../index.html">Trang chủ</a><span>›</span><a
-              href="../index.html#solutions">Giải pháp</a><span>›</span><span style="color:var(--text-primary)">Ngân
+          <div class="sol-hero-breadcrumb reveal"><a href="../index.html" data-i18n="nav_home">Trang chủ</a><span>›</span><a
+              href="../index.html#solutions" data-i18n="nav_solutions">Giải pháp</a><span>›</span><span style="color:var(--text-primary)" data-i18n="bnk_breadcrumb">Ngân
               hàng Số</span></div>
           <div class="sol-hero-icon icon-green reveal delay-1"><svg xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -1418,18 +1418,22 @@
               <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
               <polyline points="9 22 9 12 15 12 15 22" />
             </svg></div>
-          <h1 class="sol-hero-title reveal delay-2">Ngân hàng Số<br /><span style="color:#10B981">thế hệ
+          <h1 class="sol-hero-title reveal delay-2" data-i18n="bnk_hero_title">Ngân hàng Số<br /><span
+              style="color:#10B981">thế hệ
               mới</span><br />cho Việt Nam</h1>
-          <p class="sol-hero-subtitle reveal delay-3">Core banking hiện đại, open banking APIs, mobile banking và
+          <p class="sol-hero-subtitle reveal delay-3" data-i18n="bnk_hero_sub">Core banking hiện đại, open banking APIs,
+            mobile banking và
             KYC/eKYC — nền tảng tài chính số toàn diện giúp ngân hàng và fintech đột phá trong kỷ nguyên số.</p>
           <div class="hero-cta-group reveal delay-4">
-            <button class="btn btn-primary open-modal-btn" style="font-size:16px;padding:14px 28px">Liên hệ Demo <svg
-                xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <button class="btn btn-primary open-modal-btn" style="font-size:16px;padding:14px 28px"><span
+                data-i18n="bnk_btn_demo">Liên hệ Demo</span> <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
                 <path d="M5 12h14" />
                 <path d="m12 5 7 7-7 7" />
               </svg></button>
-            <a href="../index.html#solutions" class="btn btn-outline" style="font-size:16px;padding:14px 28px">← Giải
+            <a href="../index.html#solutions" class="btn btn-outline" style="font-size:16px;padding:14px 28px"
+              data-i18n="bnk_btn_back">← Giải
               pháp khác</a>
           </div>
         </div>
@@ -1437,19 +1441,19 @@
           <div class="visual-stat-grid">
             <div class="visual-stat">
               <div class="visual-stat-num">10M+</div>
-              <div class="visual-stat-label">Giao dịch/ngày</div>
+              <div class="visual-stat-label" data-i18n="bnk_stat1_label">Giao dịch/ngày</div>
             </div>
             <div class="visual-stat">
               <div class="visual-stat-num">3s</div>
-              <div class="visual-stat-label">eKYC xác thực</div>
+              <div class="visual-stat-label" data-i18n="bnk_stat2_label">eKYC xác thực</div>
             </div>
             <div class="visual-stat">
               <div class="visual-stat-num">PCI-DSS</div>
-              <div class="visual-stat-label">Bảo mật chuẩn quốc tế</div>
+              <div class="visual-stat-label" data-i18n="bnk_stat3_label">Bảo mật chuẩn quốc tế</div>
             </div>
             <div class="visual-stat">
               <div class="visual-stat-num">ISO 27001</div>
-              <div class="visual-stat-label">Chứng nhận bảo mật</div>
+              <div class="visual-stat-label" data-i18n="bnk_stat4_label">Chứng nhận bảo mật</div>
             </div>
           </div>
           <div class="visual-divider"></div>
@@ -1464,10 +1468,12 @@
 
   <section id="features" class="section">
     <div class="container">
-      <div class="section-label reveal">Tính năng nổi bật</div>
-      <h2 class="section-title reveal delay-1">Nền tảng tài chính số<br /><span style="color:#10B981">hoàn chỉnh & bảo
+      <div class="section-label reveal" data-i18n="bnk_feat_label">Tính năng nổi bật</div>
+      <h2 class="section-title reveal delay-1" data-i18n="bnk_feat_title">Nền tảng tài chính số<br /><span
+          style="color:#10B981">hoàn chỉnh & bảo
           mật</span></h2>
-      <p class="section-subtitle reveal delay-2">Từ core banking đến open banking và eKYC — giải pháp tích hợp toàn bộ
+      <p class="section-subtitle reveal delay-2" data-i18n="bnk_feat_sub">Từ core banking đến open banking và eKYC —
+        giải pháp tích hợp toàn bộ
         vòng đời sản phẩm tài chính số.</p>
       <div class="features-grid">
         <div class="feature-card reveal delay-1">
@@ -1476,8 +1482,9 @@
               <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
               <polyline points="9 22 9 12 15 12 15 22" />
             </svg></div>
-          <div class="feature-title">Core Banking Hiện đại</div>
-          <div class="feature-desc">Hệ thống core banking thế hệ mới: tài khoản, tiền gửi, tín dụng, thanh toán. Kiến
+          <div class="feature-title" data-i18n="bnk_feat1_title">Core Banking Hiện đại</div>
+          <div class="feature-desc" data-i18n="bnk_feat1_desc">Hệ thống core banking thế hệ mới: tài khoản, tiền gửi,
+            tín dụng, thanh toán. Kiến
             trúc microservices, API-first, xử lý real-time.</div>
         </div>
         <div class="feature-card reveal delay-2">
@@ -1486,8 +1493,9 @@
               <path
                 d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
             </svg></div>
-          <div class="feature-title">Open Banking APIs</div>
-          <div class="feature-desc">Nền tảng open banking chuẩn PSD2, kết nối bên thứ ba an toàn. SDK cho ứng dụng
+          <div class="feature-title" data-i18n="bnk_feat2_title">Open Banking APIs</div>
+          <div class="feature-desc" data-i18n="bnk_feat2_desc">Nền tảng open banking chuẩn PSD2, kết nối bên thứ ba an
+            toàn. SDK cho ứng dụng
             fintech, partner và hệ sinh thái số.</div>
         </div>
         <div class="feature-card reveal delay-3">
@@ -1496,8 +1504,9 @@
               <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
               <line x1="12" y1="18" x2="12.01" y2="18" />
             </svg></div>
-          <div class="feature-title">Mobile Banking</div>
-          <div class="feature-desc">Ứng dụng mobile banking đầy đủ tính năng: chuyển khoản, nạp tiền, đầu tư, bảo hiểm.
+          <div class="feature-title" data-i18n="bnk_feat3_title">Mobile Banking</div>
+          <div class="feature-desc" data-i18n="bnk_feat3_desc">Ứng dụng mobile banking đầy đủ tính năng: chuyển khoản,
+            nạp tiền, đầu tư, bảo hiểm.
             UI/UX hiện đại, hỗ trợ iOS và Android.</div>
         </div>
         <div class="feature-card reveal delay-1">
@@ -1506,8 +1515,9 @@
               <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
               <circle cx="12" cy="7" r="4" />
             </svg></div>
-          <div class="feature-title">KYC & eKYC</div>
-          <div class="feature-desc">Xác thực danh tính số: nhận diện khuôn mặt, đọc CCCD/Passport, liveness detection.
+          <div class="feature-title" data-i18n="bnk_feat4_title">KYC & eKYC</div>
+          <div class="feature-desc" data-i18n="bnk_feat4_desc">Xác thực danh tính số: nhận diện khuôn mặt, đọc
+            CCCD/Passport, liveness detection.
             Tích hợp VNPT iGate, VneID và NAPAS.</div>
         </div>
         <div class="feature-card reveal delay-2">
@@ -1516,8 +1526,9 @@
               <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
               <line x1="1" y1="10" x2="23" y2="10" />
             </svg></div>
-          <div class="feature-title">Quản lý Thẻ & Tài khoản</div>
-          <div class="feature-desc">Phát hành thẻ vật lý và ảo, quản lý hạn mức, khóa/mở thẻ real-time. Hỗ trợ Visa,
+          <div class="feature-title" data-i18n="bnk_feat5_title">Quản lý Thẻ & Tài khoản</div>
+          <div class="feature-desc" data-i18n="bnk_feat5_desc">Phát hành thẻ vật lý và ảo, quản lý hạn mức, khóa/mở thẻ
+            real-time. Hỗ trợ Visa,
             Mastercard, NAPAS và ví điện tử.</div>
         </div>
         <div class="feature-card reveal delay-3">
@@ -1525,8 +1536,9 @@
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
             </svg></div>
-          <div class="feature-title">Phòng chống Gian lận</div>
-          <div class="feature-desc">Hệ thống phát hiện gian lận real-time bằng AI: phân tích hành vi, scoring rủi ro,
+          <div class="feature-title" data-i18n="bnk_feat6_title">Phòng chống Gian lận</div>
+          <div class="feature-desc" data-i18n="bnk_feat6_desc">Hệ thống phát hiện gian lận real-time bằng AI: phân tích
+            hành vi, scoring rủi ro,
             block tự động và cảnh báo ngay lập tức.</div>
         </div>
       </div>
@@ -1537,40 +1549,45 @@
     <div class="container">
       <div class="use-cases-inner">
         <div>
-          <div class="section-label reveal">Ứng dụng thực tiễn</div>
-          <h2 class="section-title reveal delay-1">Phù hợp với tổ chức<br />tài chính nào?</h2>
-          <p class="section-subtitle reveal delay-2" style="margin-bottom:32px">Từ ngân hàng truyền thống đến neobank và
+          <div class="section-label reveal" data-i18n="bnk_uc_label">Ứng dụng thực tiễn</div>
+          <h2 class="section-title reveal delay-1" data-i18n="bnk_uc_title">Phù hợp với tổ chức<br />tài chính nào?</h2>
+          <p class="section-subtitle reveal delay-2" style="margin-bottom:32px" data-i18n="bnk_uc_sub">Từ ngân hàng
+            truyền thống đến neobank và
             fintech startup.</p>
           <div class="use-case-list">
             <div class="use-case-item reveal delay-2">
               <div class="use-case-num">01</div>
               <div>
-                <div class="use-case-title">Ngân hàng Thương mại</div>
-                <div class="use-case-desc">Hiện đại hóa core banking, triển khai mobile banking mới và mở rộng kênh số
+                <div class="use-case-title" data-i18n="bnk_uc1_title">Ngân hàng Thương mại</div>
+                <div class="use-case-desc" data-i18n="bnk_uc1_desc">Hiện đại hóa core banking, triển khai mobile banking
+                  mới và mở rộng kênh số
                   nhanh chóng mà không ảnh hưởng vận hành hiện tại.</div>
               </div>
             </div>
             <div class="use-case-item reveal delay-3">
               <div class="use-case-num">02</div>
               <div>
-                <div class="use-case-title">Neobank & Fintech</div>
-                <div class="use-case-desc">Xây dựng ngân hàng số từ đầu với kiến trúc cloud-native, launch trong 3-6
+                <div class="use-case-title" data-i18n="bnk_uc2_title">Neobank & Fintech</div>
+                <div class="use-case-desc" data-i18n="bnk_uc2_desc">Xây dựng ngân hàng số từ đầu với kiến trúc
+                  cloud-native, launch trong 3-6
                   tháng, chi phí thấp hơn 80% so với core banking truyền thống.</div>
               </div>
             </div>
             <div class="use-case-item reveal delay-4">
               <div class="use-case-num">03</div>
               <div>
-                <div class="use-case-title">Tín dụng & Cho vay</div>
-                <div class="use-case-desc">Hệ thống scoring tín dụng AI, quy trình duyệt vay tự động, quản lý danh mục
+                <div class="use-case-title" data-i18n="bnk_uc3_title">Tín dụng & Cho vay</div>
+                <div class="use-case-desc" data-i18n="bnk_uc3_desc">Hệ thống scoring tín dụng AI, quy trình duyệt vay tự
+                  động, quản lý danh mục
                   nợ và thu hồi nợ thông minh.</div>
               </div>
             </div>
             <div class="use-case-item reveal delay-5">
               <div class="use-case-num">04</div>
               <div>
-                <div class="use-case-title">Bảo hiểm Số</div>
-                <div class="use-case-desc">Phân phối bảo hiểm số qua API, quản lý hợp đồng, xử lý bồi thường tự động và
+                <div class="use-case-title" data-i18n="bnk_uc4_title">Bảo hiểm Số</div>
+                <div class="use-case-desc" data-i18n="bnk_uc4_desc">Phân phối bảo hiểm số qua API, quản lý hợp đồng, xử
+                  lý bồi thường tự động và
                   tích hợp ecosytem fintech.</div>
               </div>
             </div>
@@ -1578,29 +1595,30 @@
         </div>
         <div>
           <div class="uc-testimonial reveal-right delay-2">
-            <div class="uc-quote">"DGlobal giúp chúng tôi triển khai mobile banking mới trong 4 tháng. eKYC tích hợp sẵn
+            <div class="uc-quote" data-i18n="bnk_testi_quote">"DGlobal giúp chúng tôi triển khai mobile banking mới
+              trong 4 tháng. eKYC tích hợp sẵn
               giảm 90% thời gian onboarding khách hàng. Hệ thống xử lý ổn định với 99.99% uptime sau 18 tháng vận hành."
             </div>
             <div class="uc-author">
               <div class="uc-avatar">PL</div>
               <div>
-                <div class="uc-author-name">Phạm Thị Lan</div>
-                <div class="uc-author-title">Head of Digital, Techcombank</div>
+                <div class="uc-author-name" data-i18n="bnk_testi_name">Phạm Thị Lan</div>
+                <div class="uc-author-title" data-i18n="bnk_testi_job">Head of Digital, Techcombank</div>
               </div>
             </div>
           </div>
           <div class="uc-metrics reveal-right delay-3" style="margin-top:20px">
             <div class="uc-metric">
-              <div class="uc-metric-num">4 tháng</div>
-              <div class="uc-metric-label">Thời gian launch</div>
+              <div class="uc-metric-num" data-i18n="bnk_metric1_num">4 tháng</div>
+              <div class="uc-metric-label" data-i18n="bnk_metric1_label">Thời gian launch</div>
             </div>
             <div class="uc-metric">
-              <div class="uc-metric-num">90%</div>
-              <div class="uc-metric-label">Giảm thời gian KYC</div>
+              <div class="uc-metric-num" data-i18n="bnk_metric2_num">90%</div>
+              <div class="uc-metric-label" data-i18n="bnk_metric2_label">Giảm thời gian KYC</div>
             </div>
             <div class="uc-metric">
-              <div class="uc-metric-num">99.99%</div>
-              <div class="uc-metric-label">Uptime đảm bảo</div>
+              <div class="uc-metric-num" data-i18n="bnk_metric3_num">99.99%</div>
+              <div class="uc-metric-label" data-i18n="bnk_metric3_label">Uptime đảm bảo</div>
             </div>
           </div>
         </div>
@@ -1610,35 +1628,40 @@
 
   <section id="process" class="section">
     <div class="container">
-      <div class="section-label reveal" style="justify-content:center">Triển khai bài bản</div>
-      <h2 class="section-title reveal delay-1" style="text-align:center">Từ thiết kế đến vận hành<br /><span
-          style="color:#10B981">đúng quy trình, an toàn tuyệt đối</span></h2>
+      <div class="section-label reveal" style="justify-content:center" data-i18n="bnk_proc_label">Triển khai bài bản
+      </div>
+      <h2 class="section-title reveal delay-1" style="text-align:center" data-i18n="bnk_proc_title">Từ thiết kế đến vận
+        hành<br /><span style="color:#10B981">đúng quy trình, an toàn tuyệt đối</span></h2>
       <div class="process-steps">
         <div class="process-step reveal delay-1">
           <div class="step-num">1</div>
           <div class="step-connector"></div>
-          <div class="step-title">Phân tích & Thiết kế</div>
-          <div class="step-desc">Khảo sát nghiệp vụ, thiết kế kiến trúc hệ thống và lập kế hoạch di chuyển dữ liệu.
+          <div class="step-title" data-i18n="bnk_step1_title">Phân tích & Thiết kế</div>
+          <div class="step-desc" data-i18n="bnk_step1_desc">Khảo sát nghiệp vụ, thiết kế kiến trúc hệ thống và lập kế
+            hoạch di chuyển dữ liệu.
           </div>
         </div>
         <div class="process-step reveal delay-2">
           <div class="step-num">2</div>
           <div class="step-connector"></div>
-          <div class="step-title">Phát triển & Tích hợp</div>
-          <div class="step-desc">Phát triển module, tích hợp core banking, kết nối NAPAS, các ngân hàng liên kết và bên
+          <div class="step-title" data-i18n="bnk_step2_title">Phát triển & Tích hợp</div>
+          <div class="step-desc" data-i18n="bnk_step2_desc">Phát triển module, tích hợp core banking, kết nối NAPAS, các
+            ngân hàng liên kết và bên
             thứ ba.</div>
         </div>
         <div class="process-step reveal delay-3">
           <div class="step-num">3</div>
           <div class="step-connector"></div>
-          <div class="step-title">Kiểm tra & Bảo mật</div>
-          <div class="step-desc">UAT, penetration testing, kiểm tra tuân thủ quy định NHNN và chuẩn bị audit bảo mật.
+          <div class="step-title" data-i18n="bnk_step3_title">Kiểm tra & Bảo mật</div>
+          <div class="step-desc" data-i18n="bnk_step3_desc">UAT, penetration testing, kiểm tra tuân thủ quy định NHNN và
+            chuẩn bị audit bảo mật.
           </div>
         </div>
         <div class="process-step reveal delay-4">
           <div class="step-num">4</div>
-          <div class="step-title">Go-live & Vận hành</div>
-          <div class="step-desc">Triển khai phân giai đoạn, monitoring 24/7, hỗ trợ kỹ thuật và cập nhật liên tục.</div>
+          <div class="step-title" data-i18n="bnk_step4_title">Go-live & Vận hành</div>
+          <div class="step-desc" data-i18n="bnk_step4_desc">Triển khai phân giai đoạn, monitoring 24/7, hỗ trợ kỹ thuật
+            và cập nhật liên tục.</div>
         </div>
       </div>
     </div>
@@ -1648,18 +1671,21 @@
     <div class="bg-mesh" style="opacity:.5"></div>
     <div class="container">
       <div class="cta-demo-inner">
-        <div class="section-label reveal">Số hóa ngân hàng ngay</div>
-        <h2 class="section-title reveal delay-1">Xây dựng ngân hàng số<br /><span style="color:#10B981">nhanh hơn, an
+        <div class="section-label reveal" data-i18n="bnk_cta_label">Số hóa ngân hàng ngay</div>
+        <h2 class="section-title reveal delay-1" data-i18n="bnk_cta_title">Xây dựng ngân hàng số<br /><span
+            style="color:#10B981">nhanh hơn, an
             toàn hơn?</span></h2>
-        <p class="reveal delay-2">Gặp chuyên gia DGlobal để nhận demo hệ thống và roadmap chuyển đổi số phù hợp với quy
+        <p class="reveal delay-2" data-i18n="bnk_cta_sub">Gặp chuyên gia DGlobal để nhận demo hệ thống và roadmap chuyển
+          đổi số phù hợp với quy
           mô và mục tiêu của tổ chức bạn.</p>
         <div class="cta-demo-buttons reveal delay-3">
           <button class="btn-demo open-modal-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path
                 d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z" />
-            </svg>Liên hệ Demo ngay</button>
-          <a href="tel:+840981100001" class="btn btn-outline" style="font-size:16px;padding:14px 28px">Gọi: 0981 100
+            </svg><span data-i18n="bnk_cta_btn">Liên hệ Demo ngay</span></button>
+          <a href="tel:+840981100001" class="btn btn-outline" style="font-size:16px;padding:14px 28px"
+            data-i18n="bnk_cta_call">Gọi: 0981 100
             01</a>
         </div>
       </div>
@@ -1673,7 +1699,8 @@
           <a href="../index.html" class="nav-logo" style="margin-bottom:16px;display:inline-flex">
             <div class="logo-icon">DG</div>DGlobal
           </a>
-          <p class="footer-desc" data-i18n="footer_desc">DGlobal Technology Joint Stock Company — Giải pháp công nghệ toàn diện cho doanh nghiệp số Việt Nam.</p>
+          <p class="footer-desc" data-i18n="footer_desc">DGlobal Technology Joint Stock Company — Giải pháp công nghệ
+            toàn diện cho doanh nghiệp số Việt Nam.</p>
           <div class="social-links">
             <a href="#" class="social-link" aria-label="LinkedIn">in</a>
             <a href="#" class="social-link" aria-label="Facebook">f</a>
@@ -1728,8 +1755,8 @@
     <div class="modal-box">
       <div class="modal-header">
         <div class="modal-header-text">
-          <h2 id="modalTitle">Đăng ký Demo miễn phí</h2>
-          <p>Điền thông tin, chuyên gia DGlobal sẽ liên hệ trong 24 giờ.</p>
+          <h2 id="modalTitle" data-i18n="bnk_modal_title">Đăng ký Demo miễn phí</h2>
+          <p data-i18n="bnk_modal_sub">Điền thông tin, chuyên gia DGlobal sẽ liên hệ trong 24 giờ.</p>
         </div><button class="modal-close" id="modalClose" aria-label="Đóng"><svg xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round">
@@ -1738,30 +1765,34 @@
           </svg></button>
       </div>
       <div class="modal-form-area">
-        <form class="modal-body" id="contactForm" action="https://formsubmit.co/hann86@gmail.com" method="POST"><input
-            type="hidden" name="_subject" value="[DGlobal] Đăng ký Demo — Ngân hàng Số" /><input type="hidden"
-            name="_captcha" value="false" /><input type="hidden" name="_template" value="table" />
+        <form class="modal-body" id="contactForm" action="#" method="POST"><input type="hidden" name="_subject"
+            value="[DGlobal] Đăng ký Demo — Ngân hàng Số" /><input type="hidden" name="_captcha" value="false" /><input
+            type="hidden" name="_template" value="table" />
           <div class="form-row">
-            <div class="form-group"><label for="contactName">Họ và tên <span class="required">*</span></label><input
-                type="text" id="contactName" name="ho_va_ten" placeholder="Nguyễn Văn A" autocomplete="name" /><span
-                class="field-error" id="errName">Vui lòng nhập họ và tên</span></div>
-            <div class="form-group"><label for="contactPhone">Số điện thoại <span
+            <div class="form-group"><label for="contactName"><span data-i18n="form_name">Họ và tên</span> <span
+                  class="required">*</span></label><input type="text" id="contactName" name="ho_va_ten"
+                data-i18n-ph="form_name_ph" placeholder="Nguyễn Văn A" autocomplete="name" /><span class="field-error"
+                id="errName" data-i18n="form_name_err">Vui lòng nhập họ và tên</span></div>
+            <div class="form-group"><label for="contactPhone"><span data-i18n="form_phone">Số điện thoại</span> <span
                   class="required">*</span></label><input type="tel" id="contactPhone" name="so_dien_thoai"
-                placeholder="0912 345 678" autocomplete="tel" /><span class="field-error" id="errPhone">Vui lòng nhập số
+                data-i18n-ph="form_phone_ph" placeholder="0912 345 678" autocomplete="tel" /><span class="field-error"
+                id="errPhone" data-i18n="form_phone_err">Vui lòng nhập số
                 điện thoại hợp lệ</span></div>
           </div>
           <div class="form-group"><label for="contactEmail">Email <span class="required">*</span></label><input
-              type="email" id="contactEmail" name="email" placeholder="email@company.com" autocomplete="email" /><span
-              class="field-error" id="errEmail">Vui lòng nhập địa chỉ email hợp lệ</span></div>
-          <div class="form-group"><label for="contactMessage">Nội dung liên hệ <span
+              type="email" id="contactEmail" name="email" data-i18n-ph="form_email_ph" placeholder="email@company.com"
+              autocomplete="email" /><span class="field-error" id="errEmail" data-i18n="form_email_err">Vui lòng nhập
+              địa chỉ email hợp lệ</span></div>
+          <div class="form-group"><label for="contactMessage"><span data-i18n="form_msg">Nội dung liên hệ</span> <span
                 class="required">*</span></label><textarea id="contactMessage" name="noi_dung"
-              placeholder="Mô tả nhu cầu hoặc câu hỏi của bạn..."></textarea><span class="field-error"
-              id="errMessage">Vui lòng nhập nội dung liên hệ</span></div>
+              data-i18n-ph="form_msg_ph" placeholder="Mô tả nhu cầu hoặc câu hỏi của bạn..."></textarea><span
+              class="field-error" id="errMessage" data-i18n="form_msg_err">Vui lòng nhập nội dung liên hệ</span></div>
         </form>
         <div class="modal-footer"><button class="btn-submit" id="submitBtn" type="button">
-            <div class="spinner"></div><span class="btn-text">Gửi thông tin</span>
+            <div class="spinner"></div><span class="btn-text" data-i18n="form_submit">Gửi thông tin</span>
           </button>
-          <p class="form-note">Thông tin của bạn được bảo mật tuyệt đối và chỉ dùng để liên hệ.</p>
+          <p class="form-note" data-i18n="form_note">Thông tin của bạn được bảo mật tuyệt đối và chỉ dùng để liên hệ.
+          </p>
         </div>
       </div>
       <div class="modal-success" id="modalSuccess">
@@ -1769,13 +1800,14 @@
             stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="20 6 9 17 4 12" />
           </svg></div>
-        <div class="success-title">Gửi thành công!</div>
-        <p class="success-desc">Cảm ơn bạn đã liên hệ. Đội ngũ DGlobal sẽ phản hồi trong vòng <strong
-            style="color:var(--accent-hover)">24 giờ</strong> làm việc.</p><button class="btn btn-primary"
-          onclick="closeModal()" style="margin-top:8px">Đóng</button>
+        <div class="success-title" data-i18n="form_success_title">Gửi thành công!</div>
+        <p class="success-desc" data-i18n="form_success_desc">Cảm ơn bạn đã liên hệ. Đội ngũ DGlobal sẽ phản hồi trong
+          vòng <strong style="color:var(--accent-hover)">24 giờ</strong> làm việc.</p><button class="btn btn-primary"
+          onclick="closeModal()" style="margin-top:8px" data-i18n="modal_close">Đóng</button>
       </div>
     </div>
   </div>
+  <script src="../js/config.js"></script>
   <script>
     const navbar = document.getElementById('navbar'); window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 20), { passive: true });
     const hamburger = document.getElementById('hamburger'), drawer = document.getElementById('mobileDrawer'), drawerOverlay = document.getElementById('drawerOverlay');
@@ -1784,12 +1816,13 @@
     hamburger.addEventListener('click', () => drawer.classList.contains('open') ? closeDrawer() : openDrawer()); drawerOverlay.addEventListener('click', closeDrawer); drawer.querySelectorAll('a:not(.open-modal-btn)').forEach(a => a.addEventListener('click', closeDrawer));
     const io = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }); }, { threshold: .1, rootMargin: '0px 0px -60px 0px' }); document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => io.observe(el));
     const modal = document.getElementById('contactModal'), modalClose = document.getElementById('modalClose'), submitBtn = document.getElementById('submitBtn'), contactForm = document.getElementById('contactForm'), modalSuccess = document.getElementById('modalSuccess'), modalFormArea = document.querySelector('.modal-form-area');
+    contactForm.action = 'https://formsubmit.co/ajax/' + window.DGConfig.CONTACT_EMAIL;
     function openModal() { modal.classList.add('open'); document.body.style.overflow = 'hidden'; contactForm.reset(); modalSuccess.classList.remove('show'); modalFormArea.classList.remove('hide'); submitBtn.classList.remove('loading'); submitBtn.disabled = false; document.querySelectorAll('.field-error').forEach(e => e.classList.remove('show')); document.querySelectorAll('.form-group input,.form-group textarea').forEach(el => el.classList.remove('error')); setTimeout(() => document.getElementById('contactName').focus(), 350); }
     function closeModal() { modal.classList.remove('open'); document.body.style.overflow = ''; }
     document.querySelectorAll('.open-modal-btn').forEach(btn => btn.addEventListener('click', e => { e.preventDefault(); openModal(); }));
     modalClose.addEventListener('click', closeModal); modal.addEventListener('click', e => { if (e.target === modal) closeModal(); }); document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
     function validate() { let ok = true; const name = document.getElementById('contactName'), phone = document.getElementById('contactPhone'), email = document.getElementById('contactEmail'), msg = document.getElementById('contactMessage'); const setErr = (el, errId, cond) => { const errEl = document.getElementById(errId); if (cond) { el.classList.add('error'); errEl.classList.add('show'); ok = false; } else { el.classList.remove('error'); errEl.classList.remove('show'); } }; setErr(name, 'errName', name.value.trim().length < 2); setErr(phone, 'errPhone', !/^[0-9+\s\-()]{8,15}$/.test(phone.value.trim())); setErr(email, 'errEmail', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())); setErr(msg, 'errMessage', msg.value.trim().length < 5); return ok; }
-    submitBtn.addEventListener('click', async () => { if (!validate()) return; submitBtn.classList.add('loading'); submitBtn.disabled = true; const data = new FormData(contactForm); try { const res = await fetch('https://formsubmit.co/ajax/hann86@gmail.com', { method: 'POST', headers: { 'Accept': 'application/json' }, body: data }); if (res.ok) { modalFormArea.classList.add('hide'); modalSuccess.classList.add('show'); } else { throw new Error('fail'); } } catch { contactForm.submit(); } });
+    submitBtn.addEventListener('click', async () => { if (!validate()) return; submitBtn.classList.add('loading'); submitBtn.disabled = true; const data = new FormData(contactForm); try { const res = await fetch('https://formsubmit.co/ajax/' + window.DGConfig.CONTACT_EMAIL + '', { method: 'POST', headers: { 'Accept': 'application/json' }, body: data }); if (res.ok) { modalFormArea.classList.add('hide'); modalSuccess.classList.add('show'); } else { throw new Error('fail'); } } catch { contactForm.submit(); } });
   </script>
   <script src="../js/i18n.js"></script>
 
@@ -1807,7 +1840,10 @@
       text-decoration: none;
       transition: bottom 0.35s ease;
     }
-    .hotline-float.near-footer { bottom: 60px; }
+
+    .hotline-float.near-footer {
+      bottom: 60px;
+    }
 
     .hotline-label {
       background: #0D1530;
@@ -1878,8 +1914,15 @@
     }
 
     @media(max-width:640px) {
-      .hotline-float { bottom: 20px; right: 16px; }
-      .hotline-float.near-footer { bottom: 100px; }
+      .hotline-float {
+        bottom: 20px;
+        right: 16px;
+      }
+
+      .hotline-float.near-footer {
+        bottom: 100px;
+      }
+
       .hotline-btn {
         width: 50px;
         height: 50px

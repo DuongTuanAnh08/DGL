@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "build:env": "node scripts/build-env.js"
+  },
   "dependencies": {
     "puppeteer-core": "^24.40.0"
   }

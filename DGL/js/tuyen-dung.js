@@ -1,21 +1,23 @@
 // Apply Modal
 const modalOverlay = document.getElementById('modalOverlay');
-const modalClose   = document.getElementById('modalClose');
+const modalClose = document.getElementById('modalClose');
 const modalFormArea = document.getElementById('modalFormArea');
-const modalSuccess  = document.getElementById('modalSuccess');
-const contactForm   = document.getElementById('contactForm');
-const submitBtn     = document.getElementById('submitBtn');
+const modalSuccess = document.getElementById('modalSuccess');
+const contactForm = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
 const positionSelect = document.getElementById('positionSelect');
-
+contactForm.action = 'https://formsubmit.co/ajax/' + window.DGConfig.CONTACT_EMAIL;
 function openModal(jobTitle) {
   modalFormArea.classList.remove('hide');
   modalSuccess.classList.remove('show');
+  modalClose.style.display = '';
   submitBtn.disabled = false;
   submitBtn.classList.remove('loading');
   submitBtn.textContent = 'Gửi hồ sơ ứng tuyển';
   if (jobTitle) positionSelect.value = jobTitle;
   modalOverlay.classList.add('open');
   document.body.style.overflow = 'hidden';
+  setTimeout(() => document.getElementById('name').focus(), 350);
 }
 function closeModal() {
   modalOverlay.classList.remove('open');
@@ -29,13 +31,14 @@ document.querySelectorAll('.open-modal-btn').forEach(btn => {
   });
 });
 modalClose.addEventListener('click', closeModal);
+document.getElementById('modalSuccessClose').addEventListener('click', closeModal);
 modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) closeModal(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && modalOverlay.classList.contains('open')) closeModal(); });
 
 // Form validation
 function validate() {
   let ok = true;
-  const nameEl  = document.getElementById('name');
+  const nameEl = document.getElementById('name');
   const phoneEl = document.getElementById('phone');
   const emailEl = document.getElementById('email');
 
@@ -43,8 +46,8 @@ function validate() {
     document.getElementById(grpId).classList.toggle('has-error', cond);
     if (cond) ok = false;
   };
-  setErr('grpName',  !nameEl.value.trim());
-  setErr('grpPhone', !/^[0-9\s\+\-]{8,15}$/.test(phoneEl.value.trim()));
+  setErr('grpName', !nameEl.value.trim());
+  setErr('grpPhone', !/^[0-9+\s\-()]{8,15}$/.test(phoneEl.value.trim()));
   setErr('grpEmail', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim()));
   return ok;
 }
@@ -57,7 +60,7 @@ submitBtn.addEventListener('click', async () => {
   submitBtn.textContent = 'Đang gửi...';
   const data = new FormData(contactForm);
   try {
-    const res = await fetch('https://formsubmit.co/ajax/hann86@gmail.com', {
+    const res = await fetch('https://formsubmit.co/ajax/' + window.DGConfig.CONTACT_EMAIL, {
       method: 'POST',
       headers: { 'Accept': 'application/json' },
       body: data
@@ -65,6 +68,7 @@ submitBtn.addEventListener('click', async () => {
     if (res.ok) {
       modalFormArea.classList.add('hide');
       modalSuccess.classList.add('show');
+      modalClose.style.display = 'none';
     } else { throw new Error('fail'); }
   } catch {
     contactForm.submit();
@@ -83,10 +87,10 @@ document.querySelectorAll('.job-card').forEach(card => {
 
 // Hotline popup
 (function () {
-  function openPopup()  { document.getElementById('hotlinePopup').classList.add('open'); }
+  function openPopup() { document.getElementById('hotlinePopup').classList.add('open'); }
   function closePopup() { document.getElementById('hotlinePopup').classList.remove('open'); }
   document.querySelectorAll('.show-hotline-btn').forEach(btn => btn.addEventListener('click', openPopup));
   document.getElementById('hotlineClose').addEventListener('click', closePopup);
   document.getElementById('hotlineOverlay').addEventListener('click', closePopup);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && document.getElementById('hotlinePopup').classList.contains('open')) closePopup(); });
 })();
